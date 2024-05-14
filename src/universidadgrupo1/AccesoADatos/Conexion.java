@@ -16,7 +16,7 @@ public class Conexion {
     
     private static Connection con;
     
-    public static Connection getConexion() throws ClassNotFoundException, SQLException{
+    public static Connection getConexion(){
         
         
         if(con==null){ //significa que es la primera vez que se invoca este metodo

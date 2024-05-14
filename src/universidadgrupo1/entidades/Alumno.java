@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class Alumno {
     
-    int idAlumno;
+    int idAlumno, dni;
     String apellido, nombre;
     LocalDate fechaNacimiento;
     boolean estado;
@@ -13,8 +13,8 @@ public class Alumno {
     public Alumno() {
     }
 
-    public Alumno(int idAlumno, String apellido, String nombre, LocalDate fechaNacimiento, boolean estado) {
-        this.idAlumno = idAlumno;
+    public Alumno(int dni, String apellido, String nombre, LocalDate fechaNacimiento, boolean estado) {
+        this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -27,6 +27,14 @@ public class Alumno {
 
     public void setIdAlumno(int idAlumno) {
         this.idAlumno = idAlumno;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
     public String getApellido() {
