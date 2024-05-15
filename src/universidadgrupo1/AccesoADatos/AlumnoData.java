@@ -77,7 +77,7 @@ public class AlumnoData {
         
         Alumno alumno = null;
         
-        String sql = "SELECT * FROM alumno WHERE id = ?";
+        String sql = "SELECT * FROM alumno WHERE id = ? AND estado = true";
         
         try{
             PreparedStatement ps = c.prepareStatement(sql);
@@ -91,7 +91,7 @@ public class AlumnoData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
-                alumno.setEstado(rs.getBoolean("estado"));
+                alumno.setEstado(true);
             }else{
                 JOptionPane.showMessageDialog(null, "No existe ese alumno :(");
             }
