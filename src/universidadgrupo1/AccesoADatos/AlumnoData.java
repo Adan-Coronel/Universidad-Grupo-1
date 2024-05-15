@@ -95,12 +95,31 @@ public class AlumnoData {
             }else{
                 JOptionPane.showMessageDialog(null, "No existe ese alumno :(");
             }
+            ps.close();
             
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error SQL."+e);
         }
         
-        return null;
+        return alumno;
+        //un saludo para el profe que mira los comentarios ;)
+    }
+    
+    public void actualizarAlumno(Alumno alumno){
+    
+        String sql = "UPDATE alumno SET apellido = ? nombre = ? fechaNacimiento = ? estado = ? ";
+        
+            try{
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(2, alumno.getNombre());
+            ps.setString(3, alumno.getApellido());
+            ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
+            ps.close();
+            
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error SQL."+e);
+        }
+        
     }
     
 }
