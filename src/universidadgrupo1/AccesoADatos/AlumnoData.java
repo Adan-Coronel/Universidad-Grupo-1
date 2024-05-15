@@ -31,7 +31,7 @@ public class AlumnoData {
             ps.setBoolean(5, alumno.isEstado());
             
             ps.executeUpdate();
-            
+            ps.close();
             ResultSet rs= ps.getGeneratedKeys();
         
             if(rs.next()){
@@ -56,21 +56,29 @@ public class AlumnoData {
         try{
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setInt(1, id);
-            ps.executeUpdate();
+            int validation = ps.executeUpdate();
             
-        }catch(){
-        
+            if (validation == 1) {
+                JOptionPane.showMessageDialog(null, "Se elimino ese alumno!");
+            }else{
+                JOptionPane.showMessageDialog(null, "Ese alumno no existe pa");
+            }
+            
+            ps.close();
+            
+        }catch(SQLException e){
+        JOptionPane.showMessageDialog(null, "Error SQL."+e);
     }
     
-    public void buscarAlumno(){
-        
-    }
-    
-    public void actualizarAlumno(){
-        
-    }
-    public void listarAlumno(){
-        
-    }
+//    public void buscarAlumno(){
+//        
+//    }
+//    
+//    public void actualizarAlumno(){
+//        
+//    }
+//    public void listarAlumno(){
+//        
+//    }
     
 }
