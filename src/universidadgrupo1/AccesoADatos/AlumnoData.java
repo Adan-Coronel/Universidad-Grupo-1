@@ -50,5 +50,27 @@ public class AlumnoData {
     
     
     }
+    public void borrarAlumno(int id){
+        String sql = "DELETE FROM 'alumno' WHERE id = ?";
+        
+        try{
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            
+        }catch(){
+        
+    }
+    
+    public void buscarAlumno(){
+        
+    }
+    
+    public void actualizarAlumno(){
+        
+    }
+    public void listarAlumno(){
+        
+    }
     
 }
