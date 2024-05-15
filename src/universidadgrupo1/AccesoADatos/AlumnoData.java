@@ -70,15 +70,37 @@ public class AlumnoData {
         JOptionPane.showMessageDialog(null, "Error SQL."+e);
     }
     
-//    public void buscarAlumno(){
-//        
-//    }
-//    
-//    public void actualizarAlumno(){
-//        
-//    }
-//    public void listarAlumno(){
-//        
-//    }
+    
+    }
+    
+    public Alumno buscarAlumno(int id){
+        
+        Alumno alumno = null;
+        
+        String sql = "SELECT * FROM alumno WHERE id = ?";
+        
+        try{
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                alumno = new Alumno();
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setDni(rs.getInt("dni"));
+                alumno.setApellido(rs.getString("apellido"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setEstado(rs.getBoolean("estado"));
+            }else{
+                JOptionPane.showMessageDialog(null, "No existe ese alumno :(");
+            }
+            
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error SQL."+e);
+        }
+        
+        return null;
+    }
     
 }
