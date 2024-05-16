@@ -2,6 +2,8 @@
 package universidadgrupo1.AccesoADatos;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import universidadgrupo1.entidades.Alumno;
 
@@ -13,73 +15,69 @@ public class AlumnoData {
     public AlumnoData() {
         c= Conexion.getConexion();
     }
-    
-    public void guardarAlumno(Alumno alumno){
+
+    public void guardarAlumno(Alumno alumno) {
         String sql = ("INSERT INTO `alumno`(`dni`, `apellido`, `nombre`, "
-                    + "`fechaNacimiento`, `estado`) VALUES (?,?,?,?,?)");
-        try{
+                + "`fechaNacimiento`, `estado`) VALUES (?,?,?,?,?)");
+        try {
             PreparedStatement ps = c.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, alumno.getIdAlumno());
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
             ps.setBoolean(5, alumno.isEstado());
-            
+
             ps.executeUpdate();
             ps.close();
-            ResultSet rs= ps.getGeneratedKeys();
-        
-            if(rs.next()){
-            
+            ResultSet rs = ps.getGeneratedKeys();
+
+            if (rs.next()) {
+
                 alumno.setIdAlumno(rs.getInt(1));
-                
+
             }
-            
-            
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error SQL. No se pudo insertar en tabla alumno" + e);
+
         }
-        catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error SQL. No se pudo insertar en tabla alumno"+e);
-        
-        }
-                
-    
-    
+
     }
-    public void borrarAlumno(int id){
+
+    public void borrarAlumno(int id) {
         String sql = "DELETE FROM 'alumno' WHERE id = ?";
-        
-        try{
+
+        try {
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setInt(1, id);
             int validation = ps.executeUpdate();
-            
+
             if (validation == 1) {
                 JOptionPane.showMessageDialog(null, "Se elimino ese alumno!");
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Ese alumno no existe pa");
             }
-            
+
             ps.close();
-            
-        }catch(SQLException e){
-        JOptionPane.showMessageDialog(null, "Error SQL."+e);
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error SQL." + e);
+        }
+
     }
-    
-    
-    }
-    
-    public Alumno buscarAlumno(int id){
-        
+
+    public Alumno buscarAlumno(int id) {
+
         Alumno alumno = null;
-        
+
         String sql = "SELECT * FROM alumno WHERE id = ? AND estado = true";
-        
-        try{
+
+        try {
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            
-            if(rs.next()){
+
+            if (rs.next()) {
                 alumno = new Alumno();
                 alumno.setIdAlumno(id);
                 alumno.setDni(rs.getInt("dni"));
@@ -87,30 +85,30 @@ public class AlumnoData {
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
                 alumno.setEstado(true);
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "No existe ese alumno :(");
             }
             ps.close();
-            
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error SQL."+e);
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error SQL." + e);
         }
-        
+
         return alumno;
         //un saludo para el profe que mira los comentarios ;)
     }
-    
-        public Alumno buscarAlumnoPorDni(int dni){
-        
+
+    public Alumno buscarAlumnoPorDni(int dni) {
+
         String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni = ? AND estado = true";
         Alumno alumno = null;
 
-        try{
+        try {
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setInt(1, dni);
             ResultSet rs = ps.executeQuery();
-            
-            if(rs.next()){
+
+            if (rs.next()) {
                 alumno = new Alumno();
                 alumno.setIdAlumno(rs.getInt("idAlumno"));
                 alumno.setDni(rs.getInt("dni"));
@@ -118,33 +116,63 @@ public class AlumnoData {
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
                 alumno.setEstado(true);
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "No existe ese alumno :(");
             }
             ps.close();
-            
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error SQL."+e);
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error SQL." + e);
         }
-        
+
         return alumno;
     }
-    
-    public void actualizarAlumno(Alumno alumno){
-    
+
+    public void actualizarAlumno(Alumno alumno) {
+
         String sql = "UPDATE alumno SET apellido = ? nombre = ? fechaNacimiento = ? estado = ? ";
-        
-            try{
+
+        try {
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(2, alumno.getNombre());
             ps.setString(3, alumno.getApellido());
             ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
             ps.close();
-            
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error SQL."+e);
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error SQL." + e);
         }
-        
+
     }
-    
+
+    public List<Alumno> listarAlumnos() {
+
+        String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNacimiento FROM alumno WHERE estado = 1";
+        ArrayList<Alumno> alumnos = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = c.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Alumno alumno = new Alumno();
+                alumno = new Alumno();
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setDni(rs.getInt("dni"));
+                alumno.setApellido(rs.getString("apellido"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setEstado(true);
+
+                alumnos.add(alumno);
+            }
+            ps.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error SQL." + e);
+        }
+
+        return alumnos;
+    }
+
 }
