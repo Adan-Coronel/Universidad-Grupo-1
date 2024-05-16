@@ -1,13 +1,8 @@
 
 package universidadgrupo1.AccesoADatos;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import javax.swing.JOptionPane;
-import org.mariadb.jdbc.Statement;
 import universidadgrupo1.entidades.Alumno;
 
 
