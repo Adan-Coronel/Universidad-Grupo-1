@@ -45,7 +45,7 @@ public class AlumnoData {
     }
 
     public void borrarAlumno(int id) {
-        String sql = "DELETE FROM 'alumno' WHERE id = ?";
+        String sql = "UPDATE `alumno` SET `estado`= 0 WHERE idAlumno = ?";
 
         try {
             PreparedStatement ps = c.prepareStatement(sql);
@@ -130,13 +130,19 @@ public class AlumnoData {
 
     public void actualizarAlumno(Alumno alumno) {
 
-        String sql = "UPDATE alumno SET apellido = ? nombre = ? fechaNacimiento = ? estado = ? ";
+        String sql = "UPDATE alumno SET dni = ?, apellido = ?, nombre = ?, fechaNacimiento = ?, estado = ? WHERE idAlumno = ?";
 
         try {
             PreparedStatement ps = c.prepareStatement(sql);
-            ps.setString(2, alumno.getNombre());
-            ps.setString(3, alumno.getApellido());
+            ps.setInt(1, alumno.getDni());
+            ps.setString(2, alumno.getApellido());
+            ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
+            ps.setInt(5, alumno.getIdAlumno());
+            int validation = ps.executeUpdate();
+            if(validation == 1){
+                JOptionPane.showMessageDialog(null, "La información del alumno ha sido actualizada");
+            }
             ps.close();
 
         } catch (SQLException e) {
