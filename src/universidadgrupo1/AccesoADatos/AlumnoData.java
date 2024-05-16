@@ -81,7 +81,7 @@ public class AlumnoData {
             
             if(rs.next()){
                 alumno = new Alumno();
-                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setIdAlumno(id);
                 alumno.setDni(rs.getInt("dni"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
@@ -98,6 +98,36 @@ public class AlumnoData {
         
         return alumno;
         //un saludo para el profe que mira los comentarios ;)
+    }
+    
+        public Alumno buscarAlumnoPorDni(int dni){
+        
+        String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni = ? AND estado = true";
+        Alumno alumno = null;
+
+        try{
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, dni);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                alumno = new Alumno();
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setDni(rs.getInt("dni"));
+                alumno.setApellido(rs.getString("apellido"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setEstado(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "No existe ese alumno :(");
+            }
+            ps.close();
+            
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error SQL."+e);
+        }
+        
+        return alumno;
     }
     
     public void actualizarAlumno(Alumno alumno){
