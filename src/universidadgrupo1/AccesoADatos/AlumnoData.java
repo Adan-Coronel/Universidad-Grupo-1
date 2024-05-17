@@ -130,7 +130,7 @@ public class AlumnoData {
 
     public void actualizarAlumnoPorDni(Alumno alumno) {
 
-        String sql = "UPDATE alumno SET apellido = ?, nombre = ?, fechaNacimiento = ?, estado = ? WHERE dni = ?";
+        String sql = "UPDATE alumno SET apellido = ?, nombre = ?, fechaNacimiento = ? WHERE dni = ?";
 
         try {
             PreparedStatement ps = c.prepareStatement(sql);
@@ -138,8 +138,7 @@ public class AlumnoData {
             ps.setString(1, alumno.getApellido());
             ps.setString(2, alumno.getNombre());
             ps.setDate(3, Date.valueOf(alumno.getFechaNacimiento()));
-            ps.setBoolean(4, alumno.isEstado());
-            ps.setInt(5, alumno.getDni());
+            ps.setInt(4, alumno.getDni());
             
             
             int validation = ps.executeUpdate();

@@ -5,16 +5,18 @@ package universidadgrupo1;
 //import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
 import java.util.List;
-import universidadgrupo1.AccesoADatos.AlumnoData;
+import universidadgrupo1.AccesoADatos.*;
 //import universidadgrupo1.AccesoADatos.Conexion;
 import universidadgrupo1.entidades.Alumno;
+import universidadgrupo1.entidades.*;
 
 
 public class UniversidadGrupo1 {
 
     public static void main(String[] args){
-       
+       /*
         //PRUEBAS INSERTAR ALUMNOS
         AlumnoData alu = new AlumnoData();
         Alumno ailen = new Alumno(36227887, "Amieva Lopez", "Ailen", LocalDate.of(1992, Month.JUNE, 24), true);
@@ -55,6 +57,41 @@ public class UniversidadGrupo1 {
         
         //este solo elimina si tiene el atributo estado=1
         alu.eliminarAlumno(ailen);        
+       */
+       
+       //PRUEBA INSERTAR MATERIA
+       MateriaData mate = new MateriaData();
+       
+//       Materia eda = new Materia(1, "Estructura de datos", true);
+//       Materia ingles = new Materia (2, "Ingles", true);
+//       
+//       mate.guardarMateria(eda);
+//       mate.guardarMateria(ingles);
+//       
+       //PRUEBA BUSCAR MATERIA
+       
+        //System.out.println(mate.buscarMateria(1).toString());
+        //System.out.println(mate.buscarMateria(6).toString());
+        
+        
+        //PRUEBA ACTUALIZAR MATERIA (ponemos a EDA en segundo año)
+        //Materia eda = new Materia(5, 2, "Estructura de datos", true);
+        //mate.actualizarMateria(eda);
+        
+        
+        //PRUEBA ELIMINAR UNA MATERIA
+//        Materia comp = new Materia (1, "Compresión de texto", true);
+//        mate.guardarMateria(comp);
+//        mate.eliminarMateria(comp);
+        
+        //PRUEBA LISTAR MATERIAS
+        List<Materia> materias = new ArrayList<Materia>();
+        materias = mate.listarMaterias();
+        for (Materia materia : materias) {
+            System.out.println(materia.toString());
+        }
+        
+       
        
     }
     
