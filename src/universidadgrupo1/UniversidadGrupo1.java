@@ -1,4 +1,3 @@
-
 package universidadgrupo1;
 
 //import java.sql.Connection;
@@ -12,23 +11,31 @@ import universidadgrupo1.AccesoADatos.*;
 import universidadgrupo1.entidades.Alumno;
 import universidadgrupo1.entidades.*;
 
-
 public class UniversidadGrupo1 {
 
-    public static void main(String[] args){
-       /*
+    public static void main(String[] args) {
+
         //PRUEBAS INSERTAR ALUMNOS
         AlumnoData alu = new AlumnoData();
         Alumno ailen = new Alumno(36227887, "Amieva Lopez", "Ailen", LocalDate.of(1992, Month.JUNE, 24), true);
+        System.out.println("ID DE AILEN ANTES DE GUARDAR EN DB");
+        System.out.println(ailen.getIdAlumno());
         alu.guardarAlumno(ailen);
+        System.out.println("ID DE AILEN DESPUES DE GUARDAR EN DB");
+        System.out.println(ailen.getIdAlumno());
+        Alumno tadeo = new Alumno(3, 42553123, "Wotoszyn", "Tadeo Miguel", LocalDate.of(2003, Month.OCTOBER, 30), true);
+        tadeo = alu.buscarAlumno(3);
+        tadeo.setNombre("Tadeo");
+        alu.actualizarAlumno(tadeo);
+
         Alumno juan = new Alumno(35163871, "Pérez", "Juan", LocalDate.of(1991, 05, 30), true);//
         alu.guardarAlumno(juan);
-        
-        
+
+        /*
         //PRUEBA ACTUALIZAR ALUMNO
         Alumno juan1 = new Alumno(35163871, "Pérez", "Juan Francisco", LocalDate.of(1991, 05, 30), true);
         
-        alu.actualizarAlumnoPorDni(juan1);
+        alu.actualizarAlumno(juan1);
         
         //PRUEBA BUSCAR ALUMNO
         Alumno buscado = alu.buscarAlumno(1);
@@ -40,16 +47,18 @@ public class UniversidadGrupo1 {
             System.out.println(buscado1.toString());
         }
        
+        
         //PRUEBA LISTAR ALUMNO
         List<Alumno> aluAct = alu.listarAlumnos();
         aluAct.forEach((alumno) -> {
             if (alumno != null) {
                 System.out.println(alumno.toString());
-            } else {
+            }else {
                 System.out.println("Alumno nulo");
             }
         });
          
+        
         //PRUEBA ELIMINAR ALUMNO (cambiar el valor de estado)
         
      
@@ -57,10 +66,10 @@ public class UniversidadGrupo1 {
         
         //este solo elimina si tiene el atributo estado=1
         alu.eliminarAlumno(ailen);        
-       */
+       
        
        //PRUEBA INSERTAR MATERIA
-       MateriaData mate = new MateriaData();
+      // MateriaData mate = new MateriaData();
        
 //       Materia eda = new Materia(1, "Estructura de datos", true);
 //       Materia ingles = new Materia (2, "Ingles", true);
@@ -84,15 +93,13 @@ public class UniversidadGrupo1 {
 //        mate.guardarMateria(comp);
 //        mate.eliminarMateria(comp);
         
-        //PRUEBA LISTAR MATERIAS
+        //PRUEBA LISTAR MATERIAS SOLO ACTIVAS
         List<Materia> materias = new ArrayList<Materia>();
         materias = mate.listarMaterias();
         for (Materia materia : materias) {
             System.out.println(materia.toString());
         }
-        
-       
-       
+         */
     }
-    
+
 }

@@ -3,9 +3,9 @@ package universidadgrupo1.entidades;
 
 
 public class Materia {
-    int idMateria, anio;
-    String nombre;
-    boolean estado;
+    private int idMateria, anio;
+    private String nombre;
+    private boolean estado;
 
     public Materia() {
     }
@@ -56,6 +56,9 @@ public class Materia {
         this.estado = estado;
     }
 
+    //hacer equals/hashcode dependiendo como vayamos a comparar
+    
+     //CAMBIAR TOSTRING()
     @Override
     public String toString() {
         return "Materia{" + "idMateria=" + idMateria + ", anio=" + anio + ", nombre=" + nombre + ", estado=" + estado + '}';

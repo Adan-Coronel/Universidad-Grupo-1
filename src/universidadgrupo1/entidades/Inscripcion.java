@@ -4,10 +4,10 @@ package universidadgrupo1.entidades;
 
 public class Inscripcion {
     
-    int idInscripcion;
-    Alumno alumno;
-    Materia materia;
-    double nota;
+    private int idInscripcion;
+    private Alumno alumno;
+    private Materia materia;
+    private double nota;
 
     public Inscripcion() {
     }
@@ -60,7 +60,9 @@ public class Inscripcion {
     public void setNota(double nota) {
         this.nota = nota;
     }
-
+    
+    //hacer equals/hashcode dependiendo como vayamos a comparar
+//cambiar el to string a DNI - APENOM (get) - NOM Materia 
     @Override
     public String toString() {
         return "Inscripcion{" + "idInscripcion=" + idInscripcion + ", alumno=" + alumno + ", materia=" + materia + ", nota=" + nota + '}';

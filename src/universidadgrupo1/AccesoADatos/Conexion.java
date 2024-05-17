@@ -15,6 +15,9 @@ public class Conexion {
     
     
     private static Connection con;
+
+    private Conexion() {
+    }
     
     public static Connection getConexion(){
         

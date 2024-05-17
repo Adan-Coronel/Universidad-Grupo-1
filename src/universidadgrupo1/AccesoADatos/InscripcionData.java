@@ -22,6 +22,11 @@ public class InscripcionData {
     private MateriaData md = new MateriaData();
     private AlumnoData ad = new AlumnoData();
 
+    //Tener en cuenta la posibilidad de dar de baja inscripciones cada vez
+    //que un alumno se da de baja o cada vez que una materia se da de baja
+    
+    //  ↑  EL PROFE DIJO QUE NO PORQUE QUEREMOS HISTORIAL DE ALUMNO Y MATERIA
+    
     public InscripcionData() {
         c = Conexion.getConexion();
     }
@@ -34,7 +39,9 @@ public class InscripcionData {
             PreparedStatement ps = c.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             ps.setDouble(1, ins.getNota());
-            // la clase inscripcion tiene como atributos a un alumno y una materia, por lo tanto para setear el id al ps, tengo que hacer el get de alumno y de ahi hacer el get del id, lo mismo con inscripcion 
+            // la clase inscripcion tiene como atributos a un alumno y una materia por lo tanto para setear 
+            //el id al ps, tengo que hacer el get de alumno y de ahi hacer el get del id, lo mismo con materia 
+            
             ps.setInt(2, ins.getAlumno().getIdAlumno());
             ps.setInt(3, ins.getMateria().getIdMateria());
 
@@ -173,6 +180,8 @@ public class InscripcionData {
         //segun mis calculos de super matematico experto en sql con un master en programacion avalado por la universidad de la ulp, 
         //deberia funcionar. de lo contrario si no funciona, 
         //no fui yo el que lo hizo :)
+        //       
+        // ↑ ↑   hacete cargo tadeo, igual lo hiciste re bien ☻
         ArrayList<Materia> materias = new ArrayList<>();
 
         try {

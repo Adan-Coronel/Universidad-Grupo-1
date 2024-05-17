@@ -4,6 +4,8 @@ package universidadgrupo1.AccesoADatos;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import universidadgrupo1.entidades.Alumno;
 
@@ -33,8 +35,8 @@ public class AlumnoData {
 
             if (rs.next()) {
 
-                alumno.setIdAlumno(rs.getInt(1));
-
+                alumno.setIdAlumno(rs.getInt(1));//probar insert_id
+                JOptionPane.showMessageDialog(null, "Alumno guardado.");
             }
             ps.close();
         } catch (SQLException e) {
@@ -128,17 +130,18 @@ public class AlumnoData {
         return alumno;
     }
 
-    public void actualizarAlumnoPorDni(Alumno alumno) {
+    public void actualizarAlumno(Alumno alumno) {
 
-        String sql = "UPDATE alumno SET apellido = ?, nombre = ?, fechaNacimiento = ? WHERE dni = ?";
+        String sql = "UPDATE alumno SET dni = ?, apellido = ?, nombre = ?, fechaNacimiento = ? WHERE idAlumno= ?";
 
         try {
             PreparedStatement ps = c.prepareStatement(sql);
             
-            ps.setString(1, alumno.getApellido());
-            ps.setString(2, alumno.getNombre());
-            ps.setDate(3, Date.valueOf(alumno.getFechaNacimiento()));
-            ps.setInt(4, alumno.getDni());
+            ps.setInt(1, alumno.getDni());
+            ps.setString(2, alumno.getApellido());
+            ps.setString(3, alumno.getNombre());
+            ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
+            ps.setInt(5, alumno.getIdAlumno());
             
             
             int validation = ps.executeUpdate();
@@ -201,6 +204,18 @@ public class AlumnoData {
         
         catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error SQL. " + e);
+        }
+        
+    }
+    
+    public void hacerAlgo(ResultSet rs){
+    
+        try {
+            rs.getMetaData().getCatalogName(1);
+        
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AlumnoData.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

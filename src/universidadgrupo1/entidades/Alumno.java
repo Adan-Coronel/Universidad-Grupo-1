@@ -5,15 +5,24 @@ import java.time.LocalDate;
 
 public class Alumno {
     
-    int idAlumno, dni;
-    String apellido, nombre;
-    LocalDate fechaNacimiento;
-    boolean estado;
+    private int idAlumno, dni;
+    private String apellido, nombre;
+    private LocalDate fechaNacimiento;
+    private boolean estado;
 
     public Alumno() {
     }
 
     public Alumno(int dni, String apellido, String nombre, LocalDate fechaNacimiento, boolean estado) {
+        this.dni = dni;
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.estado = estado;
+    }
+
+    public Alumno(int idAlumno, int dni, String apellido, String nombre, LocalDate fechaNacimiento, boolean estado) {
+        this.idAlumno = idAlumno;
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
@@ -69,6 +78,9 @@ public class Alumno {
         this.estado = estado;
     }
 
+    //hacer equals/hashcode dependiendo como vayamos a comparar
+    
+    //CAMBIAR TOSTRING()
     @Override
     public String toString() {
         return "Alumno{" + "idAlumno=" + idAlumno + ", apellido=" + apellido + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", estado=" + estado + '}';
