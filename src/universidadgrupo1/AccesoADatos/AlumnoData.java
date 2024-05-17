@@ -21,14 +21,14 @@ public class AlumnoData {
                 + "`fechaNacimiento`, `estado`) VALUES (?,?,?,?,?)");
         try {
             PreparedStatement ps = c.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, alumno.getIdAlumno());
+            ps.setInt(1, alumno.getDni());
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
             ps.setBoolean(5, alumno.isEstado());
 
             ps.executeUpdate();
-            ps.close();
+            
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
@@ -36,9 +36,9 @@ public class AlumnoData {
                 alumno.setIdAlumno(rs.getInt(1));
 
             }
-
+            ps.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error SQL. No se pudo insertar en tabla alumno" + e);
+            JOptionPane.showMessageDialog(null, "Error SQL." + e);
 
         }
 
@@ -70,7 +70,7 @@ public class AlumnoData {
 
         Alumno alumno = null;
 
-        String sql = "SELECT * FROM alumno WHERE id = ? AND estado = true";
+        String sql = "SELECT * FROM alumno WHERE idAlumno = ? AND estado = true";
 
         try {
             PreparedStatement ps = c.prepareStatement(sql);
@@ -128,17 +128,20 @@ public class AlumnoData {
         return alumno;
     }
 
-    public void actualizarAlumno(Alumno alumno) {
+    public void actualizarAlumnoPorDni(Alumno alumno) {
 
-        String sql = "UPDATE alumno SET dni = ?, apellido = ?, nombre = ?, fechaNacimiento = ?, estado = ? WHERE idAlumno = ?";
+        String sql = "UPDATE alumno SET apellido = ?, nombre = ?, fechaNacimiento = ?, estado = ? WHERE dni = ?";
 
         try {
             PreparedStatement ps = c.prepareStatement(sql);
-            ps.setInt(1, alumno.getDni());
-            ps.setString(2, alumno.getApellido());
-            ps.setString(3, alumno.getNombre());
-            ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
-            ps.setInt(5, alumno.getIdAlumno());
+            
+            ps.setString(1, alumno.getApellido());
+            ps.setString(2, alumno.getNombre());
+            ps.setDate(3, Date.valueOf(alumno.getFechaNacimiento()));
+            ps.setBoolean(4, alumno.isEstado());
+            ps.setInt(5, alumno.getDni());
+            
+            
             int validation = ps.executeUpdate();
             if(validation == 1){
                 JOptionPane.showMessageDialog(null, "La información del alumno ha sido actualizada");
@@ -179,6 +182,28 @@ public class AlumnoData {
         }
 
         return alumnos;
+    }
+    
+    //elimina alumnos y verifica que este no esté actualmente inactivo
+    public void eliminarAlumno(Alumno alumno){
+        String sql = "UPDATE alumno SET estado = false WHERE idAlumno=? AND estado=true";
+        
+        try{
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, alumno.getIdAlumno());
+            int validation = ps.executeUpdate();
+            
+            if(validation==1){
+                JOptionPane.showMessageDialog(null, "El alumno ha sido eliminado");
+            }else{
+                JOptionPane.showMessageDialog(null, "No encontramos alumno con ese id que esté actualmente activo");
+            }
+        }
+        
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error SQL. " + e);
+        }
+        
     }
 
 }
