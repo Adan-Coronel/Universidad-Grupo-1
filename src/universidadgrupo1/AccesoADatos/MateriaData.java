@@ -101,6 +101,27 @@ public class MateriaData {
         }
 
     }
+        
+        public void eliminarMateria(Materia materia){
+        String sql = "UPDATE materia SET estado = false WHERE idMateria=? AND estado=true";
+        
+        try{
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, materia.getIdMateria());
+            int validation = ps.executeUpdate();
+            
+            if(validation==1){
+                JOptionPane.showMessageDialog(null, "Se elimino esa materia");
+            }else{
+                JOptionPane.showMessageDialog(null, "No encontramos esa materia actualmente en nuestra grilla curricular");
+            }
+        }
+        
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error SQL. " + e);
+        }
+        
+    }
     
 
 }
