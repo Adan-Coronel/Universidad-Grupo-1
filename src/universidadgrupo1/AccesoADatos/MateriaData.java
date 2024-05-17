@@ -5,6 +5,8 @@
 package universidadgrupo1.AccesoADatos;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import universidadgrupo1.entidades.Materia;
 
@@ -123,5 +125,34 @@ public class MateriaData {
         
     }
     
+        
+        public List<Materia> listarMaterias() {
+
+        String sql = "SELECT idMateria, nombre, año FROM materia WHERE estado = 1";
+        ArrayList<Materia> materias = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = c.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Materia materia = new Materia();
+                materia = new Materia();
+                materia.setIdMateria(rs.getInt("idMateria"));
+                materia.setNombre(rs.getString("nombre"));
+                materia.setAnio(rs.getInt("año"));
+     
+                materia.setEstado(true);
+
+                materias.add(materia);
+            }
+            ps.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error SQL." + e);
+        }
+
+        return materias;
+    }
 
 }
