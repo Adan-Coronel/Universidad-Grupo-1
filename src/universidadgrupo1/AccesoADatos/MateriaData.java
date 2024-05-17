@@ -75,6 +75,32 @@ public class MateriaData {
         return materia;
     }
     
+        
+        public void actualizarMateria(Materia materia) {
+
+        String sql = "UPDATE materia SET nombre = ?, año = ?  WHERE idMateria = ?";
+
+        //no debe modificar el estado ya que para eso ya esta el borrar materia
+        
+        try {
+            PreparedStatement ps = c.prepareStatement(sql);
+            
+            ps.setString(1, materia.getNombre());
+            ps.setInt(2, materia.getAnio());
+            ps.setInt(3,materia.getIdMateria());
+                    
+            int validation = ps.executeUpdate();
+            
+            if(validation == 1){
+                JOptionPane.showMessageDialog(null, "Se actualizo la materia!");
+            }
+            ps.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error SQL." + e);
+        }
+
+    }
     
 
 }
