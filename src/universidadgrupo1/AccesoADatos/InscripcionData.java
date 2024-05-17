@@ -224,6 +224,8 @@ public class InscripcionData {
         //segun mis calculos de super matematico experto en sql con un master en programacion avalado por la universidad de la ulp, 
         //deberia funcionar. de lo contrario si no funciona, 
         //no fui yo el que lo hizo :)
+        //       
+        // ↑ ↑   hacete cargo tadeo, igual lo hiciste re bien ☻
         ArrayList<Materia> materias = new ArrayList<>();
 
         try {

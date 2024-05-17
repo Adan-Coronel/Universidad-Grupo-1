@@ -207,7 +207,7 @@ public class AlumnoData {
         }
         
     }
-    
+    //estudiar ResultSet
     public void hacerAlgo(ResultSet rs){
     
         try {
