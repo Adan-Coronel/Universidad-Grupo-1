@@ -135,8 +135,38 @@ public class InscripcionData {
 
         return inscripciones;
     }
-    
-    
+     
+        public List<Inscripcion> obtenerInscripcionesPorAlumno(int idAlumno) {
+
+        String sql = "SELECT * FROM inscripcion WHERE idAlumno =?";
+        ArrayList<Inscripcion> inscripciones = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, idAlumno);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Inscripcion ins = new Inscripcion();
+                ins.setIdInscripcion(rs.getInt("idInscripto"));
+                ins.setNota(rs.getDouble("nota"));
+                //guardamos dentro del alumno el id que esta en el resulset
+                Alumno al = ad.buscarAlumno(rs.getInt("idAlumno"));
+                Materia m = md.buscarMateria(rs.getInt("idMateria"));
+                //una vez guardado los objetos de tipo materia y alumno, lo seteamos en la inscripcion
+                ins.setAlumno(al);
+                ins.setMateria(m);
+                
+                inscripciones.add(ins);
+            }
+            ps.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error, no se pudo acceder a inscripcion." + e);
+        }
+
+        return inscripciones;
+    }
     
     
 }
