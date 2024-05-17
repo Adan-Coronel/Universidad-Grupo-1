@@ -1,10 +1,14 @@
 
 package universidadgrupo1.AccesoADatos;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import universidadgrupo1.entidades.Alumno;
 import universidadgrupo1.entidades.Inscripcion;
+import universidadgrupo1.entidades.Materia;
 
 //CREATE TABLE `inscripcion` (
 //  `idInscripto` int(11) NOT NULL,
@@ -15,7 +19,9 @@ import universidadgrupo1.entidades.Inscripcion;
 
 public class InscripcionData {
     
-   private Connection c = null; 
+   private Connection c = null;
+   private MateriaData md = new MateriaData();
+   private AlumnoData ad = new AlumnoData();
 
     public InscripcionData() {
         c = Conexion.getConexion();
@@ -96,6 +102,42 @@ public class InscripcionData {
        }
     
     }
+    
+    
+    
+    public List<Inscripcion> obtenerInscripciones() {
+
+        String sql = "SELECT * FROM inscripcion";
+        ArrayList<Inscripcion> inscripciones = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = c.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Inscripcion ins = new Inscripcion();
+                ins.setIdInscripcion(rs.getInt("idInscripto"));
+                ins.setNota(rs.getDouble("nota"));
+                //guardamos dentro del alumno el id que esta en el resulset
+                Alumno al = ad.buscarAlumno(rs.getInt("idAlumno"));
+                Materia m = md.buscarMateria(rs.getInt("idMateria"));
+                //una vez guardado los objetos de tipo materia y alumno, lo seteamos en la inscripcion
+                ins.setAlumno(al);
+                ins.setMateria(m);
+                
+                inscripciones.add(ins);
+            }
+            ps.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error, no se pudo acceder a inscripcion." + e);
+        }
+
+        return inscripciones;
+    }
+    
+    
+    
     
 }
     
