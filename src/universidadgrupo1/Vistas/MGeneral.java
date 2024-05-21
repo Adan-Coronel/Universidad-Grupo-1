@@ -59,6 +59,13 @@ public class MGeneral extends javax.swing.JFrame {
         btnEliminarMat = new javax.swing.JButton();
         btnGuardarMat = new javax.swing.JButton();
         btnSalirMat = new javax.swing.JButton();
+        ifAlumnosPorMateria = new javax.swing.JInternalFrame();
+        lblTituloListado = new javax.swing.JLabel();
+        lblSeleccion = new javax.swing.JLabel();
+        cbMateria = new javax.swing.JComboBox<>();
+        spTabla = new javax.swing.JScrollPane();
+        tblInscriptos = new javax.swing.JTable();
+        btnSalirListado = new javax.swing.JButton();
         mbMenuGeneral = new javax.swing.JMenuBar();
         mAlumno = new javax.swing.JMenu();
         miFormAlumno = new javax.swing.JMenuItem();
@@ -127,7 +134,7 @@ public class MGeneral extends javax.swing.JFrame {
                             .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(rbEstado)
                                 .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                                    .addComponent(tfNombre)
                                     .addComponent(lblTitulo)
                                     .addComponent(tfApellido)))))
                     .addGroup(ifFormAlumnoLayout.createSequentialGroup()
@@ -173,25 +180,6 @@ public class MGeneral extends javax.swing.JFrame {
                     .addComponent(btnGuardarAlum)
                     .addComponent(btnSalirAlum))
                 .addGap(83, 83, 83))
-        );
-
-        dpGeneral.setLayer(ifFormAlumno, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout dpGeneralLayout = new javax.swing.GroupLayout(dpGeneral);
-        dpGeneral.setLayout(dpGeneralLayout);
-        dpGeneralLayout.setHorizontalGroup(
-            dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dpGeneralLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(ifFormAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        dpGeneralLayout.setVerticalGroup(
-            dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dpGeneralLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ifFormAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         infMateria.setVisible(true);
@@ -293,6 +281,103 @@ public class MGeneral extends javax.swing.JFrame {
                 .addGap(61, 61, 61))
         );
 
+        ifAlumnosPorMateria.setVisible(true);
+
+        lblTituloListado.setText("Listado de Alumnos por Materia");
+
+        lblSeleccion.setText("Seleccione una materia");
+
+        tblInscriptos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Id", "Dni", "Apellido", "Nombre"
+            }
+        ));
+        spTabla.setViewportView(tblInscriptos);
+
+        btnSalirListado.setText("Salir");
+
+        javax.swing.GroupLayout ifAlumnosPorMateriaLayout = new javax.swing.GroupLayout(ifAlumnosPorMateria.getContentPane());
+        ifAlumnosPorMateria.getContentPane().setLayout(ifAlumnosPorMateriaLayout);
+        ifAlumnosPorMateriaLayout.setHorizontalGroup(
+            ifAlumnosPorMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ifAlumnosPorMateriaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ifAlumnosPorMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ifAlumnosPorMateriaLayout.createSequentialGroup()
+                        .addComponent(lblSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbMateria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ifAlumnosPorMateriaLayout.createSequentialGroup()
+                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addGroup(ifAlumnosPorMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ifAlumnosPorMateriaLayout.createSequentialGroup()
+                                .addComponent(lblTituloListado)
+                                .addGap(105, 105, 105))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ifAlumnosPorMateriaLayout.createSequentialGroup()
+                                .addComponent(spTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ifAlumnosPorMateriaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalirListado)
+                .addContainerGap())
+        );
+        ifAlumnosPorMateriaLayout.setVerticalGroup(
+            ifAlumnosPorMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ifAlumnosPorMateriaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTituloListado)
+                .addGap(24, 24, 24)
+                .addGroup(ifAlumnosPorMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSeleccion)
+                    .addComponent(cbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(btnSalirListado))
+        );
+
+        dpGeneral.setLayer(ifFormAlumno, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        dpGeneral.setLayer(infMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        dpGeneral.setLayer(ifAlumnosPorMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout dpGeneralLayout = new javax.swing.GroupLayout(dpGeneral);
+        dpGeneral.setLayout(dpGeneralLayout);
+        dpGeneralLayout.setHorizontalGroup(
+            dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dpGeneralLayout.createSequentialGroup()
+                .addGroup(dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dpGeneralLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(ifFormAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68)
+                        .addComponent(infMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(dpGeneralLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ifAlumnosPorMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(133, Short.MAX_VALUE))
+        );
+        dpGeneralLayout.setVerticalGroup(
+            dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dpGeneralLayout.createSequentialGroup()
+                .addGroup(dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dpGeneralLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(ifFormAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(dpGeneralLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(infMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(74, 74, 74)
+                .addComponent(ifAlumnosPorMateria)
+                .addGap(65, 65, 65))
+        );
+
         mAlumno.setText("Alumno");
 
         miFormAlumno.setText("Formulario de alumno");
@@ -340,18 +425,12 @@ public class MGeneral extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(dpGeneral)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addComponent(dpGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(dpGeneral)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(infMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -414,8 +493,11 @@ public class MGeneral extends javax.swing.JFrame {
     private javax.swing.JButton btnNuevaMat;
     private javax.swing.JButton btnNuevoAlum;
     private javax.swing.JButton btnSalirAlum;
+    private javax.swing.JButton btnSalirListado;
     private javax.swing.JButton btnSalirMat;
+    private javax.swing.JComboBox<String> cbMateria;
     private javax.swing.JDesktopPane dpGeneral;
+    private javax.swing.JInternalFrame ifAlumnosPorMateria;
     private javax.swing.JInternalFrame ifFormAlumno;
     private javax.swing.JInternalFrame infMateria;
     private javax.swing.JLabel lblApellido;
@@ -427,7 +509,9 @@ public class MGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel lblFechaNac;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombreMat;
+    private javax.swing.JLabel lblSeleccion;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTituloListado;
     private javax.swing.JLabel lblTituloMat;
     private javax.swing.JMenu mAdministracion;
     private javax.swing.JMenu mAlumno;
@@ -442,6 +526,8 @@ public class MGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuItem miNotas;
     private javax.swing.JRadioButton rbEstado;
     private javax.swing.JRadioButton rbEstadoMat;
+    private javax.swing.JScrollPane spTabla;
+    private javax.swing.JTable tblInscriptos;
     private javax.swing.JTextField tfApellido;
     private javax.swing.JTextField tfAño;
     private javax.swing.JTextField tfCodigo;
