@@ -28,15 +28,6 @@ public class MGeneral extends javax.swing.JFrame {
     private void initComponents() {
 
         dpGeneral = new javax.swing.JDesktopPane();
-        infCargarNota = new javax.swing.JInternalFrame();
-        lblTitulo2 = new javax.swing.JLabel();
-        lblSelecAlumn = new javax.swing.JLabel();
-        btnGuardar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
-        cbAlumnos = new javax.swing.JComboBox<>();
-        spTablaNotas = new javax.swing.JScrollPane();
-        tblNotas = new javax.swing.JTable();
-        jSeparator1 = new javax.swing.JSeparator();
         mbMenuGeneral = new javax.swing.JMenuBar();
         mAlumno = new javax.swing.JMenu();
         miFormAlumno = new javax.swing.JMenuItem();
@@ -51,115 +42,15 @@ public class MGeneral extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblTitulo2.setText("Carga de notas");
-
-        lblSelecAlumn.setText("Seleccione un alumno");
-
-        btnGuardar.setText("Guardar");
-
-        btnSalir.setText("Salir");
-
-        cbAlumnos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbAlumnos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbAlumnosActionPerformed(evt);
-            }
-        });
-
-        tblNotas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Codigo", "Nombre", "Nota"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        spTablaNotas.setViewportView(tblNotas);
-
-        javax.swing.GroupLayout infCargarNotaLayout = new javax.swing.GroupLayout(infCargarNota.getContentPane());
-        infCargarNota.getContentPane().setLayout(infCargarNotaLayout);
-        infCargarNotaLayout.setHorizontalGroup(
-            infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infCargarNotaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalir)
-                .addGap(42, 42, 42))
-            .addGroup(infCargarNotaLayout.createSequentialGroup()
-                .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(infCargarNotaLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(btnGuardar)
-                        .addGap(10, 10, 10))
-                    .addGroup(infCargarNotaLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(infCargarNotaLayout.createSequentialGroup()
-                                .addComponent(lblSelecAlumn)
-                                .addGap(27, 27, 27)
-                                .addComponent(cbAlumnos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(spTablaNotas, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(infCargarNotaLayout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(lblTitulo2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(infCargarNotaLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        infCargarNotaLayout.setVerticalGroup(
-            infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infCargarNotaLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(lblTitulo2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSelecAlumn)
-                    .addComponent(cbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addComponent(spTablaNotas, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnSalir))
-                .addGap(38, 38, 38))
-            .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infCargarNotaLayout.createSequentialGroup()
-                    .addContainerGap(36, Short.MAX_VALUE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(400, Short.MAX_VALUE)))
-        );
-
-        dpGeneral.setLayer(infCargarNota, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout dpGeneralLayout = new javax.swing.GroupLayout(dpGeneral);
         dpGeneral.setLayout(dpGeneralLayout);
         dpGeneralLayout.setHorizontalGroup(
             dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dpGeneralLayout.createSequentialGroup()
-                .addGap(0, 244, Short.MAX_VALUE)
-                .addComponent(infCargarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 245, Short.MAX_VALUE))
+            .addGap(0, 489, Short.MAX_VALUE)
         );
         dpGeneralLayout.setVerticalGroup(
             dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dpGeneralLayout.createSequentialGroup()
-                .addGap(0, 186, Short.MAX_VALUE)
-                .addComponent(infCargarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 186, Short.MAX_VALUE))
+            .addGap(0, 372, Short.MAX_VALUE)
         );
 
         mAlumno.setText("Alumno");
@@ -227,10 +118,6 @@ public class MGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_miFormAlumnoActionPerformed
 
-    private void cbAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlumnosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbAlumnosActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -267,14 +154,7 @@ public class MGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> cbAlumnos;
     private javax.swing.JDesktopPane dpGeneral;
-    private javax.swing.JInternalFrame infCargarNota;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblSelecAlumn;
-    private javax.swing.JLabel lblTitulo2;
     private javax.swing.JMenu mAdministracion;
     private javax.swing.JMenu mAlumno;
     private javax.swing.JMenu mConsultas;
@@ -286,7 +166,5 @@ public class MGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuItem miFormMateria;
     private javax.swing.JMenuItem miInscripciones;
     private javax.swing.JMenuItem miNotas;
-    private javax.swing.JScrollPane spTablaNotas;
-    private javax.swing.JTable tblNotas;
     // End of variables declaration//GEN-END:variables
 }

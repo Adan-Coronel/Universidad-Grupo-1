@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package universidadgrupo1.vistas;
+package universidadgrupo1.Vistas;
 
 /**
  *
- * @author Usuario
+ * @author amiev
  */
-public class infCargarNotas extends javax.swing.JInternalFrame {
+public class infCargaNotas extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form infCargarNotas
+     * Creates new form CargaNotas
      */
-    public infCargarNotas() {
+    public infCargaNotas() {
         initComponents();
     }
 
@@ -27,8 +27,7 @@ public class infCargarNotas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        infCargarNota = new javax.swing.JInternalFrame();
-        lblTitulo2 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         lblSelecAlumn = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -37,7 +36,7 @@ public class infCargarNotas extends javax.swing.JInternalFrame {
         tblNotas = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
 
-        lblTitulo2.setText("Carga de notas");
+        lblTitulo.setText("Carga de notas");
 
         lblSelecAlumn.setText("Seleccione un alumno");
 
@@ -73,77 +72,60 @@ public class infCargarNotas extends javax.swing.JInternalFrame {
         });
         spTablaNotas.setViewportView(tblNotas);
 
-        javax.swing.GroupLayout infCargarNotaLayout = new javax.swing.GroupLayout(infCargarNota.getContentPane());
-        infCargarNota.getContentPane().setLayout(infCargarNotaLayout);
-        infCargarNotaLayout.setHorizontalGroup(
-            infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infCargarNotaLayout.createSequentialGroup()
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSalir)
                 .addGap(42, 42, 42))
-            .addGroup(infCargarNotaLayout.createSequentialGroup()
-                .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(infCargarNotaLayout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(153, 153, 153)
                         .addComponent(btnGuardar)
                         .addGap(10, 10, 10))
-                    .addGroup(infCargarNotaLayout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(infCargarNotaLayout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblSelecAlumn)
                                 .addGap(27, 27, 27)
                                 .addComponent(cbAlumnos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(spTablaNotas, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(infCargarNotaLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(148, 148, 148)
-                .addComponent(lblTitulo2)
+                .addComponent(lblTitulo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(infCargarNotaLayout.createSequentialGroup()
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
                     .addContainerGap()))
         );
-        infCargarNotaLayout.setVerticalGroup(
-            infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infCargarNotaLayout.createSequentialGroup()
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(lblTitulo2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(lblTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSelecAlumn)
                     .addComponent(cbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(spTablaNotas, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
                     .addComponent(btnSalir))
                 .addGap(38, 38, 38))
-            .addGroup(infCargarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infCargarNotaLayout.createSequentialGroup()
-                    .addContainerGap(36, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(53, Short.MAX_VALUE)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(400, Short.MAX_VALUE)))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 197, Short.MAX_VALUE)
-                .addComponent(infCargarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 197, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 137, Short.MAX_VALUE)
-                .addComponent(infCargarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 137, Short.MAX_VALUE))
+                    .addContainerGap(417, Short.MAX_VALUE)))
         );
 
         pack();
@@ -158,10 +140,9 @@ public class infCargarNotas extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cbAlumnos;
-    private javax.swing.JInternalFrame infCargarNota;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblSelecAlumn;
-    private javax.swing.JLabel lblTitulo2;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JScrollPane spTablaNotas;
     private javax.swing.JTable tblNotas;
     // End of variables declaration//GEN-END:variables
