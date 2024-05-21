@@ -28,89 +28,346 @@ public class MGeneral extends javax.swing.JFrame {
     private void initComponents() {
 
         dpGeneral = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        ifFormAlumno = new javax.swing.JInternalFrame();
+        lblTitulo = new javax.swing.JLabel();
+        lblDocumento = new javax.swing.JLabel();
+        lblApellido = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblEstado = new javax.swing.JLabel();
+        lblFechaNac = new javax.swing.JLabel();
+        btnNuevoAlum = new javax.swing.JButton();
+        btnEliminarAlum = new javax.swing.JButton();
+        btnGuardarAlum = new javax.swing.JButton();
+        btnSalirAlum = new javax.swing.JButton();
+        btnBuscarAlum = new javax.swing.JButton();
+        tfDocumento = new javax.swing.JTextField();
+        tfApellido = new javax.swing.JTextField();
+        tfNombre = new javax.swing.JTextField();
+        rbEstado = new javax.swing.JRadioButton();
+        infMateria = new javax.swing.JInternalFrame();
+        lblTituloMat = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JLabel();
+        tfCodigo = new javax.swing.JTextField();
+        btnBuscarMat = new javax.swing.JButton();
+        lblAño = new javax.swing.JLabel();
+        tfAño = new javax.swing.JTextField();
+        lblNombreMat = new javax.swing.JLabel();
+        tfNombreMat = new javax.swing.JTextField();
+        lblEstadoMat = new javax.swing.JLabel();
+        rbEstadoMat = new javax.swing.JRadioButton();
+        btnNuevaMat = new javax.swing.JButton();
+        btnEliminarMat = new javax.swing.JButton();
+        btnGuardarMat = new javax.swing.JButton();
+        btnSalirMat = new javax.swing.JButton();
+        mbMenuGeneral = new javax.swing.JMenuBar();
         mAlumno = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        miFormAlumno = new javax.swing.JMenuItem();
         mMateria = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        miFormMateria = new javax.swing.JMenuItem();
         mAdministracion = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        miInscripciones = new javax.swing.JMenuItem();
+        miNotas = new javax.swing.JMenuItem();
         mConsultas = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        miConsultaAlumnos = new javax.swing.JMenuItem();
         mSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        ifFormAlumno.setVisible(true);
+
+        lblTitulo.setText("Alumno");
+
+        lblDocumento.setText("Documento:");
+
+        lblApellido.setText("Apellido:");
+
+        lblNombre.setText("Nombre:");
+
+        lblEstado.setText("Estado:");
+
+        lblFechaNac.setText("Fecha de Nacimiento:");
+
+        btnNuevoAlum.setText("Nuevo");
+
+        btnEliminarAlum.setText("Eliminar");
+
+        btnGuardarAlum.setText("Guardar");
+
+        btnSalirAlum.setText("Salir");
+
+        btnBuscarAlum.setText("Buscar");
+
+        tfApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfApellidoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ifFormAlumnoLayout = new javax.swing.GroupLayout(ifFormAlumno.getContentPane());
+        ifFormAlumno.getContentPane().setLayout(ifFormAlumnoLayout);
+        ifFormAlumnoLayout.setHorizontalGroup(
+            ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ifFormAlumnoLayout.createSequentialGroup()
+                .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(ifFormAlumnoLayout.createSequentialGroup()
+                            .addGap(44, 44, 44)
+                            .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(ifFormAlumnoLayout.createSequentialGroup()
+                                    .addComponent(lblDocumento)
+                                    .addGap(31, 31, 31)
+                                    .addComponent(tfDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblApellido)
+                                .addComponent(lblNombre)
+                                .addComponent(lblEstado))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBuscarAlum))
+                        .addGroup(ifFormAlumnoLayout.createSequentialGroup()
+                            .addGap(143, 143, 143)
+                            .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(rbEstado)
+                                .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                                    .addComponent(lblTitulo)
+                                    .addComponent(tfApellido)))))
+                    .addGroup(ifFormAlumnoLayout.createSequentialGroup()
+                        .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblFechaNac)
+                            .addGroup(ifFormAlumnoLayout.createSequentialGroup()
+                                .addComponent(btnNuevoAlum)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminarAlum)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnGuardarAlum)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSalirAlum)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ifFormAlumnoLayout.setVerticalGroup(
+            ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ifFormAlumnoLayout.createSequentialGroup()
+                .addComponent(lblTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDocumento)
+                    .addComponent(tfDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarAlum))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblApellido)
+                    .addComponent(tfApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombre)
+                    .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEstado)
+                    .addComponent(rbEstado))
+                .addGap(30, 30, 30)
+                .addComponent(lblFechaNac)
+                .addGap(18, 18, 18)
+                .addGroup(ifFormAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNuevoAlum)
+                    .addComponent(btnEliminarAlum)
+                    .addComponent(btnGuardarAlum)
+                    .addComponent(btnSalirAlum))
+                .addGap(83, 83, 83))
+        );
+
+        dpGeneral.setLayer(ifFormAlumno, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout dpGeneralLayout = new javax.swing.GroupLayout(dpGeneral);
         dpGeneral.setLayout(dpGeneralLayout);
         dpGeneralLayout.setHorizontalGroup(
             dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 505, Short.MAX_VALUE)
+            .addGroup(dpGeneralLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(ifFormAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         dpGeneralLayout.setVerticalGroup(
             dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 392, Short.MAX_VALUE)
+            .addGroup(dpGeneralLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ifFormAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(109, Short.MAX_VALUE))
+        );
+
+        infMateria.setVisible(true);
+
+        lblTituloMat.setText("Materia");
+
+        lblCodigo.setText("Codigo");
+
+        btnBuscarMat.setText("Buscar");
+
+        lblAño.setText("Año");
+
+        tfAño.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAñoActionPerformed(evt);
+            }
+        });
+
+        lblNombreMat.setText("Nombre:");
+
+        lblEstadoMat.setText("Estado:");
+
+        btnNuevaMat.setText("Nuevo");
+
+        btnEliminarMat.setText("Eliminar");
+
+        btnGuardarMat.setText("Guardar");
+
+        btnSalirMat.setText("Salir");
+
+        javax.swing.GroupLayout infMateriaLayout = new javax.swing.GroupLayout(infMateria.getContentPane());
+        infMateria.getContentPane().setLayout(infMateriaLayout);
+        infMateriaLayout.setHorizontalGroup(
+            infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infMateriaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(infMateriaLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(infMateriaLayout.createSequentialGroup()
+                                .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCodigo)
+                                    .addComponent(lblEstadoMat))
+                                .addGap(60, 60, 60)
+                                .addComponent(tfCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnBuscarMat))
+                            .addGroup(infMateriaLayout.createSequentialGroup()
+                                .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNombreMat)
+                                    .addComponent(lblAño))
+                                .addGap(51, 51, 51)
+                                .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rbEstadoMat)
+                                    .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tfNombreMat)
+                                        .addComponent(lblTituloMat)
+                                        .addComponent(tfAño, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(infMateriaLayout.createSequentialGroup()
+                        .addComponent(btnNuevaMat)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarMat)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnGuardarMat)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSalirMat)))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        infMateriaLayout.setVerticalGroup(
+            infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infMateriaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTituloMat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblCodigo)
+                        .addComponent(btnBuscarMat))
+                    .addComponent(tfCodigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombreMat))
+                .addGap(10, 10, 10)
+                .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfNombreMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAño))
+                .addGap(18, 18, 18)
+                .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEstadoMat)
+                    .addComponent(rbEstadoMat))
+                .addGap(64, 64, 64)
+                .addGroup(infMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNuevaMat)
+                    .addComponent(btnEliminarMat)
+                    .addComponent(btnGuardarMat)
+                    .addComponent(btnSalirMat))
+                .addGap(61, 61, 61))
         );
 
         mAlumno.setText("Alumno");
 
-        jMenuItem1.setText("Formulario de alumno");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        miFormAlumno.setText("Formulario de alumno");
+        miFormAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                miFormAlumnoActionPerformed(evt);
             }
         });
-        mAlumno.add(jMenuItem1);
+        mAlumno.add(miFormAlumno);
 
-        jMenuBar1.add(mAlumno);
+        mbMenuGeneral.add(mAlumno);
 
         mMateria.setText("Materia");
 
-        jMenuItem2.setText("Formulario materia");
-        mMateria.add(jMenuItem2);
+        miFormMateria.setText("Formulario materia");
+        mMateria.add(miFormMateria);
 
-        jMenuBar1.add(mMateria);
+        mbMenuGeneral.add(mMateria);
 
         mAdministracion.setText("Administracion");
 
-        jMenuItem3.setText("Manejo de inscripciones");
-        mAdministracion.add(jMenuItem3);
+        miInscripciones.setText("Manejo de inscripciones");
+        mAdministracion.add(miInscripciones);
 
-        jMenuItem4.setText("Manipulacion de notas");
-        mAdministracion.add(jMenuItem4);
+        miNotas.setText("Manipulacion de notas");
+        mAdministracion.add(miNotas);
 
-        jMenuBar1.add(mAdministracion);
+        mbMenuGeneral.add(mAdministracion);
 
         mConsultas.setText("Consultas");
 
-        jMenuItem5.setText("Alumnos por materia");
-        mConsultas.add(jMenuItem5);
+        miConsultaAlumnos.setText("Alumnos por materia");
+        mConsultas.add(miConsultaAlumnos);
 
-        jMenuBar1.add(mConsultas);
+        mbMenuGeneral.add(mConsultas);
 
         mSalir.setText("Salir");
-        jMenuBar1.add(mSalir);
+        mbMenuGeneral.add(mSalir);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(mbMenuGeneral);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dpGeneral, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dpGeneral)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(infMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(dpGeneral)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(infMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void miFormAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miFormAlumnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_miFormAlumnoActionPerformed
+
+    private void tfApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfApellidoActionPerformed
+
+    private void tfAñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAñoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAñoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,17 +405,48 @@ public class MGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarAlum;
+    private javax.swing.JButton btnBuscarMat;
+    private javax.swing.JButton btnEliminarAlum;
+    private javax.swing.JButton btnEliminarMat;
+    private javax.swing.JButton btnGuardarAlum;
+    private javax.swing.JButton btnGuardarMat;
+    private javax.swing.JButton btnNuevaMat;
+    private javax.swing.JButton btnNuevoAlum;
+    private javax.swing.JButton btnSalirAlum;
+    private javax.swing.JButton btnSalirMat;
     private javax.swing.JDesktopPane dpGeneral;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JInternalFrame ifFormAlumno;
+    private javax.swing.JInternalFrame infMateria;
+    private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblAño;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblDocumento;
+    private javax.swing.JLabel lblEstado;
+    private javax.swing.JLabel lblEstadoMat;
+    private javax.swing.JLabel lblFechaNac;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombreMat;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTituloMat;
     private javax.swing.JMenu mAdministracion;
     private javax.swing.JMenu mAlumno;
     private javax.swing.JMenu mConsultas;
     private javax.swing.JMenu mMateria;
     private javax.swing.JMenu mSalir;
+    private javax.swing.JMenuBar mbMenuGeneral;
+    private javax.swing.JMenuItem miConsultaAlumnos;
+    private javax.swing.JMenuItem miFormAlumno;
+    private javax.swing.JMenuItem miFormMateria;
+    private javax.swing.JMenuItem miInscripciones;
+    private javax.swing.JMenuItem miNotas;
+    private javax.swing.JRadioButton rbEstado;
+    private javax.swing.JRadioButton rbEstadoMat;
+    private javax.swing.JTextField tfApellido;
+    private javax.swing.JTextField tfAño;
+    private javax.swing.JTextField tfCodigo;
+    private javax.swing.JTextField tfDocumento;
+    private javax.swing.JTextField tfNombre;
+    private javax.swing.JTextField tfNombreMat;
     // End of variables declaration//GEN-END:variables
 }
