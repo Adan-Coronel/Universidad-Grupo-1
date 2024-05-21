@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package universidadgrupo1.Vistas;
+package universidadgrupo1.vistas;
 
 /**
  *
- * @author amiev
+ * @author Usuario
  */
-public class MGeneral extends javax.swing.JFrame {
+public class infCargarNotas extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form MGeneral
+     * Creates new form infCargarNotas
      */
-    public MGeneral() {
+    public infCargarNotas() {
         initComponents();
     }
 
@@ -27,7 +27,6 @@ public class MGeneral extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dpGeneral = new javax.swing.JDesktopPane();
         infCargarNota = new javax.swing.JInternalFrame();
         lblTitulo2 = new javax.swing.JLabel();
         lblSelecAlumn = new javax.swing.JLabel();
@@ -37,19 +36,6 @@ public class MGeneral extends javax.swing.JFrame {
         spTablaNotas = new javax.swing.JScrollPane();
         tblNotas = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
-        mbMenuGeneral = new javax.swing.JMenuBar();
-        mAlumno = new javax.swing.JMenu();
-        miFormAlumno = new javax.swing.JMenuItem();
-        mMateria = new javax.swing.JMenu();
-        miFormMateria = new javax.swing.JMenuItem();
-        mAdministracion = new javax.swing.JMenu();
-        miInscripciones = new javax.swing.JMenuItem();
-        miNotas = new javax.swing.JMenuItem();
-        mConsultas = new javax.swing.JMenu();
-        miConsultaAlumnos = new javax.swing.JMenuItem();
-        mSalir = new javax.swing.JMenu();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblTitulo2.setText("Carga de notas");
 
@@ -143,149 +129,39 @@ public class MGeneral extends javax.swing.JFrame {
                     .addContainerGap(400, Short.MAX_VALUE)))
         );
 
-        dpGeneral.setLayer(infCargarNota, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout dpGeneralLayout = new javax.swing.GroupLayout(dpGeneral);
-        dpGeneral.setLayout(dpGeneralLayout);
-        dpGeneralLayout.setHorizontalGroup(
-            dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dpGeneralLayout.createSequentialGroup()
-                .addGap(0, 244, Short.MAX_VALUE)
-                .addComponent(infCargarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 245, Short.MAX_VALUE))
-        );
-        dpGeneralLayout.setVerticalGroup(
-            dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dpGeneralLayout.createSequentialGroup()
-                .addGap(0, 186, Short.MAX_VALUE)
-                .addComponent(infCargarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 186, Short.MAX_VALUE))
-        );
-
-        mAlumno.setText("Alumno");
-
-        miFormAlumno.setText("Formulario de alumno");
-        miFormAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miFormAlumnoActionPerformed(evt);
-            }
-        });
-        mAlumno.add(miFormAlumno);
-
-        mbMenuGeneral.add(mAlumno);
-
-        mMateria.setText("Materia");
-
-        miFormMateria.setText("Formulario materia");
-        mMateria.add(miFormMateria);
-
-        mbMenuGeneral.add(mMateria);
-
-        mAdministracion.setText("Administracion");
-
-        miInscripciones.setText("Manejo de inscripciones");
-        mAdministracion.add(miInscripciones);
-
-        miNotas.setText("Manipulacion de notas");
-        mAdministracion.add(miNotas);
-
-        mbMenuGeneral.add(mAdministracion);
-
-        mConsultas.setText("Consultas");
-
-        miConsultaAlumnos.setText("Alumnos por materia");
-        mConsultas.add(miConsultaAlumnos);
-
-        mbMenuGeneral.add(mConsultas);
-
-        mSalir.setText("Salir");
-        mbMenuGeneral.add(mSalir);
-
-        setJMenuBar(mbMenuGeneral);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(dpGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(0, 197, Short.MAX_VALUE)
+                .addComponent(infCargarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 197, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(dpGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(0, 137, Short.MAX_VALUE)
+                .addComponent(infCargarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 137, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void miFormAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miFormAlumnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_miFormAlumnoActionPerformed
-
     private void cbAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlumnosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbAlumnosActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MGeneral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MGeneral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MGeneral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MGeneral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MGeneral().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cbAlumnos;
-    private javax.swing.JDesktopPane dpGeneral;
     private javax.swing.JInternalFrame infCargarNota;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblSelecAlumn;
     private javax.swing.JLabel lblTitulo2;
-    private javax.swing.JMenu mAdministracion;
-    private javax.swing.JMenu mAlumno;
-    private javax.swing.JMenu mConsultas;
-    private javax.swing.JMenu mMateria;
-    private javax.swing.JMenu mSalir;
-    private javax.swing.JMenuBar mbMenuGeneral;
-    private javax.swing.JMenuItem miConsultaAlumnos;
-    private javax.swing.JMenuItem miFormAlumno;
-    private javax.swing.JMenuItem miFormMateria;
-    private javax.swing.JMenuItem miInscripciones;
-    private javax.swing.JMenuItem miNotas;
     private javax.swing.JScrollPane spTablaNotas;
     private javax.swing.JTable tblNotas;
     // End of variables declaration//GEN-END:variables
