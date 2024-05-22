@@ -76,7 +76,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblTituloMat" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                       <Component id="lblCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -94,12 +94,12 @@
                   <Component id="tfNombreMat" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAño" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="lblEstadoMat" min="-2" max="-2" attributes="0"/>
-                  <Component id="rbEstadoMat" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbEstadoMat" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnNuevaMat" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEliminarMat" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -146,13 +146,22 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="tfCodigo">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="tfA&#xf1;o">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfA&#xf1;oActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="tfNombreMat">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbEstadoMat">
       <AuxValues>

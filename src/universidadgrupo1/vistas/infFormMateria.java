@@ -120,7 +120,7 @@ public class infFormMateria extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTituloMat)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblCodigo)
@@ -134,11 +134,11 @@ public class infFormMateria extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfNombreMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAño))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblEstadoMat)
                     .addComponent(rbEstadoMat))
-                .addGap(70, 70, 70)
+                .addGap(82, 82, 82)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevaMat)
                     .addComponent(btnEliminarMat)
@@ -171,8 +171,8 @@ public class infFormMateria extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblNombreMat;
     private javax.swing.JLabel lblTituloMat;
     public javax.swing.JRadioButton rbEstadoMat;
-    private javax.swing.JTextField tfAño;
-    private javax.swing.JTextField tfCodigo;
-    private javax.swing.JTextField tfNombreMat;
+    public javax.swing.JTextField tfAño;
+    public javax.swing.JTextField tfCodigo;
+    public javax.swing.JTextField tfNombreMat;
     // End of variables declaration//GEN-END:variables
 }
