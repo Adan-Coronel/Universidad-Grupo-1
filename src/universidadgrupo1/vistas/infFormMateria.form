@@ -30,10 +30,18 @@
                                   <Component id="lblCodigo" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblEstadoMat" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="tfCodigo" min="-2" pref="67" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnBuscarMat" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="tfCodigo" min="-2" pref="67" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btnBuscarMat" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="rbEstadoMat" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -41,13 +49,10 @@
                                   <Component id="lblAño" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="rbEstadoMat" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="tfNombreMat" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblTituloMat" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tfAño" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="tfNombreMat" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblTituloMat" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfAño" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -89,12 +94,12 @@
                   <Component id="tfNombreMat" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAño" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblEstadoMat" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="rbEstadoMat" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblEstadoMat" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbEstadoMat" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="64" pref="64" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnNuevaMat" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEliminarMat" alignment="3" min="-2" max="-2" attributes="0"/>
