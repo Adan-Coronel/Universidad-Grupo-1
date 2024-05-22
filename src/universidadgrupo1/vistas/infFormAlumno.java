@@ -64,6 +64,11 @@ public class infFormAlumno extends javax.swing.JInternalFrame {
         lblFechaNac.setText("Fecha de Nacimiento:");
 
         btnNuevoAlum.setText("Nuevo");
+        btnNuevoAlum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoAlumActionPerformed(evt);
+            }
+        });
 
         btnEliminarAlum.setText("Eliminar");
 
@@ -150,22 +155,26 @@ public class infFormAlumno extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfApellidoActionPerformed
 
+    private void btnNuevoAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoAlumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevoAlumActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscarAlum;
-    private javax.swing.JButton btnEliminarAlum;
-    private javax.swing.JButton btnGuardarAlum;
-    private javax.swing.JButton btnNuevoAlum;
-    private javax.swing.JButton btnSalirAlum;
+    public javax.swing.JButton btnBuscarAlum;
+    public javax.swing.JButton btnEliminarAlum;
+    public javax.swing.JButton btnGuardarAlum;
+    public javax.swing.JButton btnNuevoAlum;
+    public javax.swing.JButton btnSalirAlum;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblDocumento;
     private javax.swing.JLabel lblEstado;
     private javax.swing.JLabel lblFechaNac;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JRadioButton rbEstado;
-    private javax.swing.JTextField tfApellido;
-    private javax.swing.JTextField tfDocumento;
-    private javax.swing.JTextField tfNombre;
+    public javax.swing.JRadioButton rbEstado;
+    public javax.swing.JTextField tfApellido;
+    public javax.swing.JTextField tfDocumento;
+    public javax.swing.JTextField tfNombre;
     // End of variables declaration//GEN-END:variables
 }

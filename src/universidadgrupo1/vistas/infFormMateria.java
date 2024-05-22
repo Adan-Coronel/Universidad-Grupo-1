@@ -63,6 +63,11 @@ public class infFormMateria extends javax.swing.JInternalFrame {
         btnNuevaMat.setText("Nuevo");
 
         btnEliminarMat.setText("Eliminar");
+        btnEliminarMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMatActionPerformed(evt);
+            }
+        });
 
         btnGuardarMat.setText("Guardar");
 
@@ -149,13 +154,17 @@ public class infFormMateria extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfAñoActionPerformed
 
+    private void btnEliminarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarMatActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscarMat;
-    private javax.swing.JButton btnEliminarMat;
-    private javax.swing.JButton btnGuardarMat;
-    private javax.swing.JButton btnNuevaMat;
-    private javax.swing.JButton btnSalirMat;
+    public javax.swing.JButton btnBuscarMat;
+    public javax.swing.JButton btnEliminarMat;
+    public javax.swing.JButton btnGuardarMat;
+    public javax.swing.JButton btnNuevaMat;
+    public javax.swing.JButton btnSalirMat;
     private javax.swing.JLabel lblAño;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblEstadoMat;
