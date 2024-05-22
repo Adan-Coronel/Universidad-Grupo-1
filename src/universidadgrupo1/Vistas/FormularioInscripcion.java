@@ -186,14 +186,14 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAnular;
     private javax.swing.JButton btnInscribir;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<Alumno> cbAlumno;
+    public javax.swing.JComboBox<Alumno> cbAlumno;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblListMaterias;
     private javax.swing.JLabel lblSeleccionarAlumno;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JRadioButton rbtnMateriasInsc;
-    private javax.swing.JRadioButton rbtnMateriasNoInsc;
-    private javax.swing.JTable tblListadoAlumnos;
+    public javax.swing.JRadioButton rbtnMateriasInsc;
+    public javax.swing.JRadioButton rbtnMateriasNoInsc;
+    public javax.swing.JTable tblListadoAlumnos;
     // End of variables declaration//GEN-END:variables
 }
 

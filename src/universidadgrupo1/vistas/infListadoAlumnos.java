@@ -100,11 +100,11 @@ public class infListadoAlumnos extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSalirListado;
-    private javax.swing.JComboBox<String> cbMateria;
+    public javax.swing.JButton btnSalirListado;
+    public javax.swing.JComboBox<String> cbMateria;
     private javax.swing.JLabel lblSeleccion;
     private javax.swing.JLabel lblTituloListado;
     private javax.swing.JScrollPane spTabla;
-    private javax.swing.JTable tblInscriptos;
+    public javax.swing.JTable tblInscriptos;
     // End of variables declaration//GEN-END:variables
 }

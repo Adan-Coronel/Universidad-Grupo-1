@@ -137,13 +137,13 @@ public class infCargaNotas extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> cbAlumnos;
+    public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnSalir;
+    public javax.swing.JComboBox<String> cbAlumnos;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblSelecAlumn;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JScrollPane spTablaNotas;
+    public javax.swing.JScrollPane spTablaNotas;
     private javax.swing.JTable tblNotas;
     // End of variables declaration//GEN-END:variables
 }

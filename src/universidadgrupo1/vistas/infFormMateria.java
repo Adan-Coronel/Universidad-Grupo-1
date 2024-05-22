@@ -170,7 +170,7 @@ public class infFormMateria extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblEstadoMat;
     private javax.swing.JLabel lblNombreMat;
     private javax.swing.JLabel lblTituloMat;
-    private javax.swing.JRadioButton rbEstadoMat;
+    public javax.swing.JRadioButton rbEstadoMat;
     private javax.swing.JTextField tfAño;
     private javax.swing.JTextField tfCodigo;
     private javax.swing.JTextField tfNombreMat;
