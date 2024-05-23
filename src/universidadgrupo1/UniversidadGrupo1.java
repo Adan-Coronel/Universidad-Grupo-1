@@ -7,13 +7,18 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import universidadgrupo1.AccesoADatos.*;
+import universidadgrupo1.controlador.*;
 //import universidadgrupo1.AccesoADatos.Conexion;
 import universidadgrupo1.entidades.Alumno;
 import universidadgrupo1.entidades.*;
+import universidadgrupo1.vistas.*;
 
 public class UniversidadGrupo1 {
 
     public static void main(String[] args) {
+        
+        
+        
 /*
         //PRUEBAS INSERTAR ALUMNOS
         AlumnoData alu = new AlumnoData();

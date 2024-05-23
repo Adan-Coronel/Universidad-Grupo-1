@@ -5,6 +5,10 @@
  */
 package universidadgrupo1.Vistas;
 
+import universidadgrupo1.AccesoADatos.AlumnoData;
+import universidadgrupo1.controlador.ctrlCargaAlumnos;
+import universidadgrupo1.entidades.Alumno;
+
 /**
  *
  * @author amiev
@@ -50,7 +54,7 @@ public class MGeneral extends javax.swing.JFrame {
         );
         dpGeneralLayout.setVerticalGroup(
             dpGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 372, Short.MAX_VALUE)
+            .addGap(0, 567, Short.MAX_VALUE)
         );
 
         mAlumno.setText("Alumno");
@@ -108,14 +112,37 @@ public class MGeneral extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(dpGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void miFormAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miFormAlumnoActionPerformed
-        // TODO add your handling code here:
+        Alumno a = new Alumno();
+        AlumnoData ad = new AlumnoData();
+        universidadgrupo1.vistas.infFormAlumno ia =  new universidadgrupo1.vistas.infFormAlumno();
+         ctrlCargaAlumnos ca = new ctrlCargaAlumnos(a, ad, ia);
+        
+        
+        dpGeneral.removeAll();
+        dpGeneral.repaint();
+        
+        ia.setVisible(true);
+        ia.setLocation(00, 00);
+        dpGeneral.add(ia);
+        dpGeneral.moveToFront(ia);
+        
+        /*
+        jdpEscritorio.removeAll();
+        jdpEscritorio.repaint();
+        AgregarProductos p1 = new AgregarProductos(listaProductos);
+        p1.setVisible(true);
+        p1.setLocation(00, 00);
+        jdpEscritorio.add(p1);
+        jdpEscritorio.moveToFront(p1);
+        */
+        
     }//GEN-LAST:event_miFormAlumnoActionPerformed
 
     /**

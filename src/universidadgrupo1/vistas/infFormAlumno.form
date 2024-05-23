@@ -46,10 +46,8 @@
                               <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="rbEstado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="tfNombre" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="tfApellido" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="tfApellido" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="tfNombre" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="lblFechaNac" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -147,9 +145,6 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="tfApellido">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfApellidoActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -181,9 +176,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Nuevo"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevoAlumActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>

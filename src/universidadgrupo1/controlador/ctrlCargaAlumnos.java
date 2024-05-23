@@ -29,7 +29,7 @@ public class ctrlCargaAlumnos implements ActionListener {
         alumnoVista.btnBuscarAlum.addActionListener(this);
 
     }
-
+   
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -53,6 +53,8 @@ public class ctrlCargaAlumnos implements ActionListener {
             }
             alumno.setEstado(alumnoVista.rbEstado.isSelected());
             //agregar el date JC
+           
+            alumno.setFechaNacimiento(alumnoVista.jcFechaNac.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
             alumnoData.guardarAlumno(alumno);
 
         }

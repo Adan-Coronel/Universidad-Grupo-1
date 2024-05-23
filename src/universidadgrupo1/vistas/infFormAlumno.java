@@ -1,10 +1,9 @@
 package universidadgrupo1.vistas;
 
+import universidadgrupo1.controlador.*;
+
 public class infFormAlumno extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form infFormAlumno
-     */
     public infFormAlumno() {
         initComponents();
     }
@@ -45,22 +44,11 @@ public class infFormAlumno extends javax.swing.JInternalFrame {
 
         lblEstado.setText("Estado:");
 
-        tfApellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfApellidoActionPerformed(evt);
-            }
-        });
-
         btnBuscarAlum.setText("Buscar");
 
         lblFechaNac.setText("Fecha de Nacimiento:");
 
         btnNuevoAlum.setText("Nuevo");
-        btnNuevoAlum.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoAlumActionPerformed(evt);
-            }
-        });
 
         btnEliminarAlum.setText("Eliminar");
 
@@ -95,9 +83,8 @@ public class infFormAlumno extends javax.swing.JInternalFrame {
                                 .addGap(99, 99, 99)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rbEstado)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tfNombre)
-                                        .addComponent(tfApellido))))
+                                    .addComponent(tfApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(lblFechaNac)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnNuevoAlum)
@@ -149,14 +136,6 @@ public class infFormAlumno extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tfApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfApellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfApellidoActionPerformed
-
-    private void btnNuevoAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoAlumActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevoAlumActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
