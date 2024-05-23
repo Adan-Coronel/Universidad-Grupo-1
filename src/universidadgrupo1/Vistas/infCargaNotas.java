@@ -144,6 +144,6 @@ public class infCargaNotas extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblSelecAlumn;
     private javax.swing.JLabel lblTitulo;
     public javax.swing.JScrollPane spTablaNotas;
-    private javax.swing.JTable tblNotas;
+    public javax.swing.JTable tblNotas;
     // End of variables declaration//GEN-END:variables
 }
