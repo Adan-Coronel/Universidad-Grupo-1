@@ -83,7 +83,7 @@ public class Alumno {
     //CAMBIAR TOSTRING()
     @Override
     public String toString() {
-        return "Alumno{" + "idAlumno=" + idAlumno + ", apellido=" + apellido + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", estado=" + estado + '}';
+        return  dni +", "+apellido+", "+", "+nombre;
     }
     
     

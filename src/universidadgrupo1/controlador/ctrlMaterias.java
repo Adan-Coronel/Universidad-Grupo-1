@@ -71,7 +71,7 @@ public class ctrlMaterias implements ActionListener{
                 band = false;
             }
             materia.setEstado(materiaVista.rbEstadoMat.isSelected());
-            //agregar el date JC
+           // agregar el date JC
             materiaData.guardarMateria(materia);
 
         }

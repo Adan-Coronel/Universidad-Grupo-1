@@ -38,7 +38,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         cargarAlumnos();//carga el combo box con los alumnos del metodo listar alumnos
         
     }
-    private void borrarFilas() {
+    public void borrarFilas() {
         int i = model.getColumnCount();
 
         for (int j = i; j >= 0; j--) {
@@ -74,7 +74,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         
     }
     
-    private void cargaDatosNoisc(){
+    private void cargaDatosNoInsc(){
         
         Alumno select = (Alumno) cbAlumno.getSelectedItem();
         listaMat = (ArrayList<Materia>) inscData.obtenerMateriasNoCursadas(select.getIdAlumno());
@@ -123,6 +123,11 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         });
 
         rbtnMateriasNoInsc.setText("Materias no inscriptas");
+        rbtnMateriasNoInsc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnMateriasNoInscActionPerformed(evt);
+            }
+        });
 
         tblListadoAlumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -211,8 +216,19 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
 
     private void rbtnMateriasInscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnMateriasInscActionPerformed
         borrarFilas();
-        rbtnMateriasNoInsc.setSelected(false);
+        rbtnMateriasNoInsc.setSelected(false); //deja al otro boton inutil
+        cargaDatosInsc();
+        btnAnular.setEnabled(true);
+        btnInscribir.setEnabled(false);
     }//GEN-LAST:event_rbtnMateriasInscActionPerformed
+
+    private void rbtnMateriasNoInscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnMateriasNoInscActionPerformed
+        borrarFilas();
+        rbtnMateriasInsc.setSelected(false); //deja al otro boton inutil
+        cargaDatosNoInsc();
+        btnAnular.setEnabled(false);
+        btnInscribir.setEnabled(true);
+    }//GEN-LAST:event_rbtnMateriasNoInscActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
