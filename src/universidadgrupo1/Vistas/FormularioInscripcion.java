@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
@@ -37,6 +38,14 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         cargarAlumnos();//carga el combo box con los alumnos del metodo listar alumnos
         
     }
+    private void borrarFilas() {
+        int i = model.getColumnCount();
+
+        for (int j = i; j >= 0; j--) {
+            model.removeRow(j);
+        }
+
+    }
     
     private void armarCabecera(){
         ArrayList<Object> filaCabecera = new ArrayList<>();
@@ -49,19 +58,33 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         }
         tblListadoAlumnos.setModel(model);
     }
-    private void borrarFilas(){
-        int i = model.getColumnCount();
-        
-        for (int j = i; j >= 0; j--) {
-            model.removeRow(j);
-        }
-        
-    }
+
     private void cargarAlumnos(){
         for (Alumno item : listaAlum) {
             cbAlumno.addItem(item);
         }
     }
+    
+    private void cargaDatosInsc(){
+        Alumno select = (Alumno) cbAlumno.getSelectedItem();
+        listaMat = (ArrayList<Materia>) inscData.obtenerMateriasCursadas(select.getIdAlumno());
+        for (Materia mat : listaMat) {
+            model.addRow(new Object[] {mat.getIdMateria(),mat.getNombre(), mat.getAnio()});
+        }
+        
+    }
+    
+    private void cargaDatosNoisc(){
+        
+        Alumno select = (Alumno) cbAlumno.getSelectedItem();
+        listaMat = (ArrayList<Materia>) inscData.obtenerMateriasNoCursadas(select.getIdAlumno());
+        
+        for (Materia mat : listaMat) {
+            model.addRow(new Object[] {mat.getIdMateria(),mat.getNombre(),mat.getAnio()});
+        }
+        
+    } 
+    
     
 
     /**
@@ -93,6 +116,11 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         lblListMaterias.setText("Listado de Materias ");
 
         rbtnMateriasInsc.setText("Materias inscriptas");
+        rbtnMateriasInsc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnMateriasInscActionPerformed(evt);
+            }
+        });
 
         rbtnMateriasNoInsc.setText("Materias no inscriptas");
 
@@ -181,11 +209,16 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void rbtnMateriasInscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnMateriasInscActionPerformed
+        borrarFilas();
+        rbtnMateriasNoInsc.setSelected(false);
+    }//GEN-LAST:event_rbtnMateriasInscActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAnular;
-    private javax.swing.JButton btnInscribir;
-    private javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnAnular;
+    public javax.swing.JButton btnInscribir;
+    public javax.swing.JButton btnSalir;
     public javax.swing.JComboBox<Alumno> cbAlumno;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblListMaterias;
