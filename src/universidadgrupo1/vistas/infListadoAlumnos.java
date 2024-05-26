@@ -5,17 +5,37 @@
  */
 package universidadgrupo1.vistas;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import universidadgrupo1.AccesoADatos.AlumnoData;
+import universidadgrupo1.AccesoADatos.InscripcionData;
+import universidadgrupo1.AccesoADatos.MateriaData;
+import universidadgrupo1.entidades.*;
+
 /**
  *
  * @author Usuario
  */
 public class infListadoAlumnos extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form infListadoAlumnos
-     */
+    private ArrayList<Materia> listaMat;
+    private MateriaData matData;
+    private ArrayList<Alumno> listaAlum;
+    private AlumnoData alumData;
+    private InscripcionData inscData;
+
+    private DefaultTableModel model;
+    
     public infListadoAlumnos() {
         initComponents();
+        
+        model = new DefaultTableModel();
+        matData=new MateriaData();
+        inscData = new InscripcionData();
+        listaAlum = (ArrayList<Alumno>) alumData.listarAlumnos();
+        listaMat = (ArrayList<Materia>) matData.listarMaterias();
+        
+        cargaMaterias();
     }
 
     /**
@@ -38,6 +58,12 @@ public class infListadoAlumnos extends javax.swing.JInternalFrame {
 
         lblSeleccion.setText("Seleccione una materia");
 
+        cbMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbMateriaActionPerformed(evt);
+            }
+        });
+
         tblInscriptos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -52,6 +78,11 @@ public class infListadoAlumnos extends javax.swing.JInternalFrame {
         spTabla.setViewportView(tblInscriptos);
 
         btnSalirListado.setText("Salir");
+        btnSalirListado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirListadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,8 +94,8 @@ public class infListadoAlumnos extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbMateria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                        .addComponent(cbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,10 +129,56 @@ public class infListadoAlumnos extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSalirListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirListadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirListadoActionPerformed
 
+    private void cbMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMateriaActionPerformed
+        borrarFilas();
+        cargarMateriasPorAlumno();
+    }//GEN-LAST:event_cbMateriaActionPerformed
+
+        public void borrarFilas() {
+        int i = model.getColumnCount();
+
+        for (int j = i; j >= 0; j--) {
+            model.removeRow(j);
+        }
+
+    }
+    private void cargaMaterias() {
+        for (Materia item : listaMat) {
+            cbMateria.addItem(item);
+        }
+    }
+        private void armarCabecera(){
+        ArrayList<Object> filaCabecera = new ArrayList<>();
+        filaCabecera.add("Id");
+        filaCabecera.add("Dni");
+        filaCabecera.add("Apellido");
+        filaCabecera.add("Nombre");
+        
+        for (Object i : filaCabecera) {
+            model.addColumn(i);
+        }
+        tblInscriptos.setModel(model);
+    }
+        
+    private void cargarMateriasPorAlumno(){
+    
+        Materia select = (Materia) cbMateria.getSelectedItem();
+        listaAlum = (ArrayList<Alumno>) inscData.listarAlumnosPorMateria(select.getIdMateria());
+        
+        for (Alumno a : listaAlum) {
+            model.addRow(new Object[] {a.getIdAlumno(),a.getDni(),a.getApellido(),a.getNombre()});
+        }
+    
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnSalirListado;
-    public javax.swing.JComboBox<String> cbMateria;
+    public javax.swing.JComboBox<Materia> cbMateria;
     private javax.swing.JLabel lblSeleccion;
     private javax.swing.JLabel lblTituloListado;
     private javax.swing.JScrollPane spTabla;

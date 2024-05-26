@@ -55,6 +55,11 @@ public class infFormAlumno extends javax.swing.JInternalFrame {
         btnGuardarAlum.setText("Guardar");
 
         btnSalirAlum.setText("Salir");
+        btnSalirAlum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirAlumActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,6 +141,10 @@ public class infFormAlumno extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirAlumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirAlumActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
