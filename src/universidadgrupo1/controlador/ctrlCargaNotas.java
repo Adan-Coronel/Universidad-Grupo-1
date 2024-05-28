@@ -31,6 +31,8 @@ public class ctrlCargaNotas implements ActionListener {
         cargaNotas.cbAlumno.addActionListener(this);
         cargaNotas.btnGuardar.addActionListener(this);
         cargaNotas.btnSalir.addActionListener(this);
+        
+        
         //falta como cambiar las notas
     }
     
@@ -48,6 +50,7 @@ public class ctrlCargaNotas implements ActionListener {
             
             if (filaSelect != -1) {
                 //
+                alum = (Alumno) cargaNotas.cbAlumno.getSelectedItem();
                 int idAlumno = alum.getIdAlumno();
                 materia = inscripcion.getMateria();
                 int idMat = materia.getIdMateria();

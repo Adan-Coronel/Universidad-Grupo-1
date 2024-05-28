@@ -39,9 +39,11 @@ public class infCargaNotas extends javax.swing.JInternalFrame {
         inscData = new InscripcionData();
         model = new DefaultTableModel();
         listaAlum = (ArrayList<Alumno>) alumData.listarAlumnos(); //tambien se puede hacer con List
+        listaIns = new ArrayList<Inscripcion>();
         
         cargarAlumnos();//carga el combo box con los alumnos del metodo listar alumnos
         armarCabecera();
+        
     }
 
     /**
@@ -69,9 +71,9 @@ public class infCargaNotas extends javax.swing.JInternalFrame {
     }
 
     public void borrarFilas() {
-        int i = model.getColumnCount();
+        int i = model.getRowCount();
 
-        for (int j = i; j >= 0; j--) {
+        for (int j = i-1; j >= 0; j--) {
             model.removeRow(j);
         }
     }
