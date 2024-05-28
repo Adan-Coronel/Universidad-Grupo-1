@@ -52,6 +52,8 @@ public class ctrlCargaNotas implements ActionListener {
                 //
                 alum = (Alumno) cargaNotas.cbAlumno.getSelectedItem();
                 int idAlumno = alum.getIdAlumno();
+                int idInsc = (int) cargaNotas.tblNotas.getValueAt(filaSelect, 1);
+                //inscripcion = cargaNotas.tblNotas.getSelectedRow();
                 materia = inscripcion.getMateria();
                 int idMat = materia.getIdMateria();
                 double nota = (double) cargaNotas.tblNotas.getValueAt(filaSelect, 2);
