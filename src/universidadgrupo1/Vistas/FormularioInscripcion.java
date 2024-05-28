@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package universidadgrupo1.Vistas;
+package universidadgrupo1.vistas;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import universidadgrupo1.AccesoADatos.AlumnoData;
@@ -34,7 +34,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         inscData = new InscripcionData();
         model = new DefaultTableModel();
         listaAlum = (ArrayList<Alumno>) alumData.listarAlumnos(); //tambien se puede hacer con List
-        
+       
         cargarAlumnos();//carga el combo box con los alumnos del metodo listar alumnos
         
     }
@@ -149,11 +149,6 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         btnAnular.setEnabled(false);
 
         btnSalir.setText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -234,10 +229,6 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         btnAnular.setEnabled(false);
         btnInscribir.setEnabled(true);
     }//GEN-LAST:event_rbtnMateriasNoInscActionPerformed
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        
-    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

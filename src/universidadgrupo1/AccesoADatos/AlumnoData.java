@@ -40,7 +40,7 @@ public class AlumnoData {
             }
             ps.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error SQL." + e);
+            JOptionPane.showMessageDialog(null, "ALUMNO DATA Error SQL." + e);
 
         }
 

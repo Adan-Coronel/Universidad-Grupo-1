@@ -8,7 +8,7 @@ package universidadgrupo1.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import universidadgrupo1.AccesoADatos.*;
-import universidadgrupo1.Vistas.infCargaNotas;
+import universidadgrupo1.vistas.infCargaNotas;
 import universidadgrupo1.entidades.*;
 
 
@@ -57,7 +57,7 @@ public class ctrlCargaNotas implements ActionListener {
         }
         //si se presionó el botón salir
         if(e.getSource()== cargaNotas.btnSalir){
-            
+            cargaNotas.dispose();
         }
     }  
     

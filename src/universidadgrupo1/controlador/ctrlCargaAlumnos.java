@@ -1,5 +1,6 @@
 package universidadgrupo1.controlador;
 
+import universidadgrupo1.vistas.infFormAlumno;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
@@ -9,7 +10,6 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import universidadgrupo1.AccesoADatos.*;
 import universidadgrupo1.entidades.*;
-import universidadgrupo1.vistas.*;
 
 public class ctrlCargaAlumnos implements ActionListener {
 
@@ -105,6 +105,10 @@ public class ctrlCargaAlumnos implements ActionListener {
                 }
             }
 
+        }
+        
+        if(e.getSource() == alumnoVista.btnSalirAlum){
+            alumnoVista.dispose();
         }
 
     }

@@ -35,7 +35,7 @@ public class MateriaData {
             }
             ps.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error SQL." + e);
+            JOptionPane.showMessageDialog(null, "MATERIA DATA Error SQL." + e);
 
         }
 
@@ -64,7 +64,7 @@ public class MateriaData {
             ps.close();
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error SQL." + e);
+            JOptionPane.showMessageDialog(null, "MATERIA DATA Error SQL." + e);
         }
 
         return materia;
@@ -113,7 +113,7 @@ public class MateriaData {
         }
         
         catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error SQL. " + e);
+            JOptionPane.showMessageDialog(null, "MATERIA DATA Error SQL. " + e);
         }
         
     }
@@ -142,7 +142,7 @@ public class MateriaData {
             ps.close();
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error SQL." + e);
+            JOptionPane.showMessageDialog(null, "MATERIA DATA Error SQL." + e);
         }
 
         return materias;

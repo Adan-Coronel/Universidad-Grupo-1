@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import universidadgrupo1.AccesoADatos.*;
-import universidadgrupo1.Vistas.*;
+import universidadgrupo1.vistas.*;
 import universidadgrupo1.entidades.*;
 
 
@@ -68,6 +68,11 @@ public class ctrlInscripcion implements ActionListener {
             }
             
         }
+        
+        if(e.getSource()== formInsc.btnSalir){
+            formInsc.dispose();
+        }
+        
         
         
     }

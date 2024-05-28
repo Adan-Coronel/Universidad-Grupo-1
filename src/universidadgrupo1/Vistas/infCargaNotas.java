@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package universidadgrupo1.Vistas;
+package universidadgrupo1.vistas;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,6 @@
 package universidadgrupo1.controlador;
 
+import universidadgrupo1.vistas.infFormMateria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -10,7 +11,6 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import universidadgrupo1.AccesoADatos.*;
 import universidadgrupo1.entidades.*;
-import universidadgrupo1.vistas.*;
 
 /**
  *
@@ -35,12 +35,7 @@ public class ctrlMaterias implements ActionListener{
         
         
     }
-    
-    
-    
-    
-    
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         
@@ -119,6 +114,10 @@ public class ctrlMaterias implements ActionListener{
                 }
             }
 
+        }
+        
+        if(e.getSource()==materiaVista.btnSalirMat){
+            materiaVista.dispose();
         }
         
         

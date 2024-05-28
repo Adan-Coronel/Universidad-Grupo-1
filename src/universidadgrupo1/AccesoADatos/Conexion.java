@@ -32,7 +32,7 @@ public class Conexion {
                 JOptionPane.showMessageDialog(null, "Error, no se pudieron cargar los drivers");
             }
             catch(SQLException e){
-                JOptionPane.showMessageDialog(null, "Error SQL");
+                JOptionPane.showMessageDialog(null, "CONEXION DATA Error SQL");
             }
         }
         return con;

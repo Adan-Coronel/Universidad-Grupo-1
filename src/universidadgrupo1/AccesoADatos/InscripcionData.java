@@ -257,9 +257,9 @@ public class InscripcionData {
 
     public List<Alumno> listarAlumnosPorMateria(int idMateria) {
 
-        String sql = "SELECT a.idAlumno, a.dni, a.apellido, a.nombre, a.fechaNacimiento"
-                + "FROM alumno a"
-                + "JOIN inscripcion i ON a.idAlumno = i.idAlumno"
+        String sql = "SELECT a.idAlumno, a.dni, a.apellido, a.nombre, a.fechaNacimiento "
+                + "FROM alumno a "
+                + "JOIN inscripcion i ON a.idAlumno = i.idAlumno "
                 + "WHERE i.idMateria = ?;";
         ArrayList<Alumno> alumnos = new ArrayList<>();
 
@@ -276,13 +276,13 @@ public class InscripcionData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
-                alumno.setEstado(rs.getBoolean("estado"));
+                //alumno.setEstado(rs.getBoolean("estado"));
                 alumnos.add(alumno);
             }
             ps.close();
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error SQL." + e);
+            JOptionPane.showMessageDialog(null, "INSCRIPCION DATA  Error SQL." + e);
         }
 
         return alumnos;

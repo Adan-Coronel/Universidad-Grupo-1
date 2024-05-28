@@ -11,7 +11,6 @@ import universidadgrupo1.controlador.*;
 //import universidadgrupo1.AccesoADatos.Conexion;
 import universidadgrupo1.entidades.Alumno;
 import universidadgrupo1.entidades.*;
-import universidadgrupo1.vistas.*;
 
 public class UniversidadGrupo1 {
 
