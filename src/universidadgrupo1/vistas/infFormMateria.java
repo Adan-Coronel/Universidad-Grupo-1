@@ -34,8 +34,8 @@ public class infFormMateria extends javax.swing.JInternalFrame {
         lblEstadoMat = new javax.swing.JLabel();
         btnBuscarMat = new javax.swing.JButton();
         tfCodigo = new javax.swing.JTextField();
-        tfAño = new javax.swing.JTextField();
         tfNombreMat = new javax.swing.JTextField();
+        tfAnio = new javax.swing.JTextField();
         rbEstadoMat = new javax.swing.JRadioButton();
         btnNuevaMat = new javax.swing.JButton();
         btnEliminarMat = new javax.swing.JButton();
@@ -54,9 +54,9 @@ public class infFormMateria extends javax.swing.JInternalFrame {
 
         btnBuscarMat.setText("Buscar");
 
-        tfAño.addActionListener(new java.awt.event.ActionListener() {
+        tfNombreMat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfAñoActionPerformed(evt);
+                tfNombreMatActionPerformed(evt);
             }
         });
 
@@ -107,9 +107,9 @@ public class infFormMateria extends javax.swing.JInternalFrame {
                                     .addComponent(lblAño))
                                 .addGap(51, 51, 51)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfNombreMat)
+                                    .addComponent(tfAnio)
                                     .addComponent(lblTituloMat)
-                                    .addComponent(tfAño, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(tfNombreMat, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnNuevaMat)
                         .addGap(18, 18, 18)
@@ -133,11 +133,11 @@ public class infFormMateria extends javax.swing.JInternalFrame {
                     .addComponent(tfCodigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfNombreMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNombreMat))
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNombreMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAño))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -155,9 +155,9 @@ public class infFormMateria extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfAñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAñoActionPerformed
+    private void tfNombreMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNombreMatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfAñoActionPerformed
+    }//GEN-LAST:event_tfNombreMatActionPerformed
 
     private void btnEliminarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMatActionPerformed
         // TODO add your handling code here:
@@ -180,7 +180,7 @@ public class infFormMateria extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblNombreMat;
     private javax.swing.JLabel lblTituloMat;
     public javax.swing.JRadioButton rbEstadoMat;
-    public javax.swing.JTextField tfAño;
+    public javax.swing.JTextField tfAnio;
     public javax.swing.JTextField tfCodigo;
     public javax.swing.JTextField tfNombreMat;
     // End of variables declaration//GEN-END:variables

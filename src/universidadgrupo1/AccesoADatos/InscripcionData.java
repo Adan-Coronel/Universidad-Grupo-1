@@ -171,10 +171,10 @@ public class InscripcionData {
 
     public List<Materia> obtenerMateriasCursadas(int idAlumno) {
 
-        String sql = "SELECT m.idMateria, m.nombre, m.año, m.estado"
-                + "FROM materia m"
-                + "JOIN inscripcion i ON m.idMateria = i.idMateria"
-                + "JOIN alumno a ON i.idAlumno = a.idAlumno"
+        String sql = "SELECT m.idMateria, m.nombre, m.año, m.estado "
+                + "FROM materia m "
+                + "JOIN inscripcion i ON m.idMateria = i.idMateria "
+                + "JOIN alumno a ON i.idAlumno = a.idAlumno "
                 + "WHERE a.idAlumno = ?;";
         // probar si anda con esta sentencia, 
         //segun mis calculos de super matematico experto en sql con un master en programacion avalado por la universidad de la ulp, 
@@ -213,8 +213,8 @@ public class InscripcionData {
 
     public List<Materia> obtenerMateriasNoCursadas(int idAlumno) {
 
-        String sql = "SELECT m.idMateria, m.nombre, m.año, m.estado"
-                + "FROM materia m"
+        String sql = "SELECT m.idMateria, m.nombre, m.año, m.estado "
+                + "FROM materia m "
                 + "WHERE m.idMateria NOT IN ("
                 + "    SELECT i.idMateria"
                 + "    FROM inscripcion i"

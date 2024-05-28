@@ -26,6 +26,7 @@ public class MGeneral extends javax.swing.JFrame {
         mConsultas = new javax.swing.JMenu();
         miConsultaAlumnos = new javax.swing.JMenuItem();
         mSalir = new javax.swing.JMenu();
+        miSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +98,16 @@ public class MGeneral extends javax.swing.JFrame {
         mbMenuGeneral.add(mConsultas);
 
         mSalir.setText("Salir");
+
+        miSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
+        miSalir.setText("Salir");
+        miSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSalirActionPerformed(evt);
+            }
+        });
+        mSalir.add(miSalir);
+
         mbMenuGeneral.add(mSalir);
 
         setJMenuBar(mbMenuGeneral);
@@ -202,6 +213,11 @@ public class MGeneral extends javax.swing.JFrame {
         
     }//GEN-LAST:event_miConsultaAlumnosActionPerformed
 
+    private void miSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSalirActionPerformed
+      
+        dispose();
+    }//GEN-LAST:event_miSalirActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -248,5 +264,6 @@ public class MGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuItem miFormMateria;
     private javax.swing.JMenuItem miInscripciones;
     private javax.swing.JMenuItem miNotas;
+    private javax.swing.JMenuItem miSalir;
     // End of variables declaration//GEN-END:variables
 }

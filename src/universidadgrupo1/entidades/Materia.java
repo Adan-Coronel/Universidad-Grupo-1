@@ -61,7 +61,7 @@ public class Materia {
      //CAMBIAR TOSTRING()
     @Override
     public String toString() {
-        return "Materia{" + "idMateria=" + idMateria + ", anio=" + anio + ", nombre=" + nombre + ", estado=" + estado + '}';
+        return nombre + ". Año: " + anio;
     }
     
     

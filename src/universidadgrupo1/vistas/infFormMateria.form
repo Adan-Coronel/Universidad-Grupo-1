@@ -50,9 +50,9 @@
                               </Group>
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tfNombreMat" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfAnio" alignment="0" max="32767" attributes="0"/>
                                   <Component id="lblTituloMat" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfAño" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="tfNombreMat" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -86,12 +86,12 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="tfAño" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfNombreMat" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblNombreMat" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="tfNombreMat" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfAnio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAño" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -150,15 +150,15 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfA&#xf1;o">
+    <Component class="javax.swing.JTextField" name="tfNombreMat">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfA&#xf1;oActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNombreMatActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfNombreMat">
+    <Component class="javax.swing.JTextField" name="tfAnio">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
