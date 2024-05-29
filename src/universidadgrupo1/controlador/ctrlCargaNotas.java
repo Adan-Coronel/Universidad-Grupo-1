@@ -52,11 +52,12 @@ public class ctrlCargaNotas implements ActionListener {
                 //
                 alum = (Alumno) cargaNotas.cbAlumno.getSelectedItem();
                 int idAlumno = alum.getIdAlumno();
-                int idInsc = (int) cargaNotas.tblNotas.getValueAt(filaSelect, 1);
-                //inscripcion = cargaNotas.tblNotas.getSelectedRow();
+                int idInscr = (Integer) cargaNotas.tblNotas.getValueAt(filaSelect, 0);
+                inscripcion = cargaNotas.obtenerInscr(idInscr);
                 materia = inscripcion.getMateria();
                 int idMat = materia.getIdMateria();
-                double nota = (double) cargaNotas.tblNotas.getValueAt(filaSelect, 2);
+                String nt = (String) cargaNotas.tblNotas.getValueAt(filaSelect, 2);
+                double nota = Double.valueOf(nt);
                 inscrData.actualizarNota(idAlumno, idMat, nota);
             }
         }

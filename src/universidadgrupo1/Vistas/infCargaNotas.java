@@ -19,6 +19,7 @@ public class infCargaNotas extends javax.swing.JInternalFrame {
     
     private Alumno select;
     private Materia materia;
+    private Inscripcion inscripcion;
     
     private InscripcionData inscData;
     private MateriaData matData;
@@ -35,7 +36,9 @@ public class infCargaNotas extends javax.swing.JInternalFrame {
         
         select = new Alumno();
         alumData = new AlumnoData();
+        materia = new Materia();
         matData = new MateriaData();
+        inscripcion = new Inscripcion();
         inscData = new InscripcionData();
         model = new DefaultTableModel();
         listaAlum = (ArrayList<Alumno>) alumData.listarAlumnos(); //tambien se puede hacer con List
@@ -87,7 +90,16 @@ public class infCargaNotas extends javax.swing.JInternalFrame {
             model.addRow(new Object[] {ins.getIdInscripcion(), materia.getNombre(), ins.getNota()});                    
         }    
     }
-     
+    
+    public Inscripcion obtenerInscr(int idIns){
+        for(Inscripcion ins : listaIns) {
+            if(ins.getIdInscripcion() == idIns){
+                inscripcion = ins;
+            }
+        }
+        return inscripcion;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
